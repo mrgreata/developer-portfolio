@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Marlon Greta – Data Analyst & Wirtschaftsinformatik</title>
   <meta name="description" content="Data Analysis, Power BI, Python & Automatisierung – Reports ohne Excel-Chaos. Portfolio & Projekte." />
+  <link rel="alternate" hreflang="de" href="https://mrgreata.github.io/developer-portfolio/" />
+  <link rel="alternate" hreflang="en" href="https://mrgreata.github.io/developer-portfolio/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://mrgreata.github.io/developer-portfolio/" />
+
 
   <!-- Schriften -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,352 +33,431 @@
   </script>
 </head>
 <body>
-  <!-- ====================== HEADER / NAV ====================== -->
-  <header class="container nav">
-    <div class="brand">
-      <span class="badge">Verfügbar für Projekte</span>
-      <!-- Trennpunkt zwischen Badges / Status -->
-      <span style="opacity:.6">•</span>
-      <span class="muted">Antwort binnen 24h</span>
-    </div>
-    <nav>
-      <a class="btn" href="#web" aria-label="Zu Web & UX">Web & UX</a>
-      <a class="btn" href="#projekte" aria-label="Zu Projekte">Projekte</a>
-      <a class="btn" href="#leistungen" aria-label="Zu Leistungen">Leistungen</a>
-      <a class="btn primary" href="mailto:marlongreta1@gmail.com" aria-label="Kontakt per E-Mail">Projekt anfragen</a>
-    </nav>
-  </header>
+    <div id="page-fade"></div>
+  <div id="cursor-ring"></div>
 
-  <!-- ====================== MAIN CONTENT ====================== -->
-<main class="container">
-  <!-- ====================== HERO ====================== -->
-  <section class="hero">
-    <!-- Hero-Textkarte (USP, Call-to-Action, KPIs) -->
-    <div class="card">
-      <span class="tag">Webseiten, Landingpages & UX</span>
-      <h1>Klare Websites & Landingpages – <span class="muted">die wirklich konvertieren</span>.</h1>
-      <p class="muted">
-        Schlanke, schnelle Websites mit klarem Fokus auf UX & Conversion. Sauberes HTML/CSS/JS,
-        Performance, SEO-Basics & Analytics – damit Besucher zu Kunden werden.
-      </p>
-      <!-- CTA-Buttons -->
-      <div style="display:flex;gap:12px;margin-top:14px">
-        <a class="btn primary" href="mailto:marlongreta1@gmail.com">Kostenloses Erstgespräch</a>
-        <a class="btn" href="#web">Web-Projekte ansehen</a>
+  <!-- ====================== FULLSCREEN INTRO ====================== -->
+  <section class="intro" id="intro">
+      <video class="intro-bg"
+          autoplay
+          muted
+          loop
+          playsinline>
+      <source src="media/intro.webm" type="video/webm">
+      <source src="media/intro.mp4" type="video/mp4">
+      </video>
+
+    <div class="intro-brand">Marlon Greta</div>
+    <div class="intro-inner container">
+      <h1>
+      
+        <span class="muted">Digital Experience & Measurement.</span>
+      </h1>
+      <p>Von der Website bis zur datenbasierten Entscheidung.</p>
+    
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
+        <a class="btn primary" href="#page">Projekte ansehen</a>
+        <a class="btn btn-glass-liquid" href="mailto:marlongreta1@gmail.com">Projekt anfragen</a>
       </div>
-      <!-- KPI-Kacheln -->
-      <div class="kpis">
-        <div class="kpi">
-          <div class="muted">Go-Live</div>
-          <div class="price"><span class="num">7–21</span><span>&nbsp;Tage</span></div>
-        </div>
-        <div class="kpi">
-          <div class="muted">Performance</div>
-          <div class="price"><span class="num">90+</span><span>&nbsp;Lighthouse</span></div>
-        </div>
-        <div class="kpi">
-          <div class="muted">Zufriedenheit</div>
-          <div class="price"><span class="num">100%</span><span>&nbsp;Garantie*</span></div>
-        </div>
-      </div>
+
+      
     </div>
   </section>
 
+  <!-- ====================== HEADER / NAV ====================== -->
+   <div id="page">
 
-    <!-- ====================== WEB & UX (jetzt direkt nach Hero) ====================== -->
-    <section id="web" class="section">
-      <h2>Web & UX</h2>
-
-      <!-- kurze Einleitung (optional) -->
-      <p class="muted" style="margin:6px 0 18px">
-        Performante Websites & Landingpages – sauber umgesetzt, messbar und wartbar.
-      </p>
-
-      <div class="grid grid-3">
-        <!-- Web-Projekt 1 -->
-        <article class="card project">
-          
-          <div class="thumb" aria-hidden="true"
-               style="background:
-                 radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
-                 radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
-                 url('images/landing1.jpg') center/cover no-repeat, #0e1522;
-               ">
-          </div>
-          <div>
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">Performance</span>
-          </div>
-          <h3>Landingpage für Kampagne</h3>
-          <p>Leichtgewichtige Page mit klarer Conversion-Story.</p>
-          <ul class="muted" style="margin:0 0 4px 18px">
-            <li>– Lighthouse 95+/100</li>
-            <li>– +28% Anfragen</li>
-          </ul>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn" href="https://dergutefreund.at/" target="_blank" rel="noopener">🟢 Live</a>
-            <a class="btn" href="https://github.com/mrgreata" target="_blank" rel="noopener">👨‍💻 Code</a>
-          </div>
-        </article>
-
-        <!-- Web-Projekt 2 -->
-        <article class="card project">
-          <div class="thumb" aria-hidden="true"
-               style="background:
-                 radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
-                 radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
-                 url('images/portfolio.jpg') center/cover no-repeat, #0e1522;">
-          </div>
-          <div>
-            <span class="tag">Vanilla JS</span>
-            <span class="tag">SEO</span>
-          </div>
-          <h3>Portfolio/Company Site</h3>
-          <p>Saubere Informationsarchitektur, schnelle Ladezeiten, On-Page SEO.</p>
-          <ul class="muted" style="margin:0 0 4px 18px">
-            <li>– Core Web Vitals „grün“</li>
-          </ul>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn" href="https://mrgreata.github.io/Web-Medics/" target="_blank" rel="noopener">🟢 Live</a>
-            <a class="btn" href="https://github.com/mrgreata/Web-Medics" target="_blank" rel="noopener">👨‍💻 Code</a>
-          </div>
-        </article>
-
-        <!-- Web-Projekt 3 -->
-        <article class="card project">
-          <div class="thumb" aria-hidden="true"
-               style="background:
-                 radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
-                 radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
-                 url('images/admin-ui.jpg') center/cover no-repeat, #0e1522;">
-          </div>
-          <div>
-            <span class="tag">API</span>
-            <span class="tag">Dashboard UI</span>
-          </div>
-          <h3>Mini-Admin mit API-Einbindung</h3>
-          <p>Frontend für interne Datenansicht (Read-only) mit Fetch/CSV-Export.</p>
-          <ul class="muted" style="margin:0 0 4px 18px">
-            <li>– <abbr title="Time To Interactive">TTI</abbr> &lt; 1.5s</li>
-          </ul>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn" href="https://live-link-3.tld" target="_blank" rel="noopener">🟢 Live</a>
-            <a class="btn" href="https://github.com/mrgreata" target="_blank" rel="noopener">👨‍💻 Code</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ====================== PAKETE & PREISE – WEB & UX (auch vor Analytics) ====================== -->
-    <section class="section">
-      <h2>Pakete & Preise – Web & UX</h2>
-      <div class="grid grid-3">
-        
+      <header class="container nav">
+        <div class="brand">
+          <span class="badge">Verfügbar für Projekte</span>
+          <!-- Trennpunkt zwischen Badges / Status -->
+          <span style="opacity:.6">•</span>
+          <span class="muted">Antwort binnen 24h</span>
+        </div>
+        <nav>
+          <a class="btn" href="#web" aria-label="Zu Web & UX">Web & UX</a>
+          <a class="btn" href="#projekte" aria-label="Zu Projekte">Projekte</a>
+          <a class="btn" href="#leistungen" aria-label="Zu Leistungen">Leistungen</a>
+          <a class="btn primary" href="mailto:marlongreta1@gmail.com" aria-label="Kontakt per E-Mail">Projekt anfragen</a>
+          <a class="btn" href="/" onclick="localStorage.setItem('lang','de')">DE</a>
+          <a class="btn" href="en/" onclick="localStorage.setItem('lang','en')">EN</a>
+        </nav>
+      </header>
+      <!-- ====================== MAIN CONTENT ====================== -->
+    <main class="container">
+      <!-- ====================== HERO ====================== -->
+      <section class="hero reveal">
+        <!-- Hero-Textkarte (USP, Call-to-Action, KPIs) -->
         <div class="card">
-          <h3>Starter</h3>
-          <p class="muted">Onepager oder kleine Portfolio-Seite</p>
-          <div class="price"><span class="num">€ 890</span><span>einmalig</span></div>
-          <ul class="muted" style="margin-left:18px">
-            <li> bis 3 Unterseiten</li>
-            <li> Responsive Design</li>
-            <li> Grund-SEO & Performance-Setup</li>
-          </ul>
-          <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
-        </div>
-        
-        <div class="card">
-          <h3>Business</h3>
-          <p class="muted">Individuelle Website mit CMS & UX-Fokus</p>
-          <div class="price"><span class="num">€ 2.490</span><span>einmalig</span></div>
-          <ul class="muted" style="margin-left:18px">
-            <li> bis 8 Unterseiten</li>
-            <li> Individuelles UI-Design (Figma oder direkt im Code)</li>
-            <li> CMS-Integration (z. B. Webflow, WordPress oder Headless)</li>
-            <li> SEO-Basics & Launch-Optimierung</li>
-          </ul>
-          <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
-        </div>
-        
-        <div class="card">
-          <h3>Care</h3>
-          <p class="muted">Laufende Betreuung, Updates & Optimierung</p>
-          <div class="price"><span class="num">€ 190</span><span>/Monat</span></div>
-          <ul class="muted" style="margin-left:18px">
-            <li> Regelmäßige Backups & Sicherheitsupdates</li>
-            <li> Inhaltspflege (Texte, Bilder, Blog etc.)</li>
-            <li> Kleine Design- oder UX-Verbesserungen</li>
-            <li> Priorisierter Support</li>
-          </ul>
-          <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ====================== PROJEKTE (Analytics/Reporting) ====================== -->
-    <section id="projekte" class="section">
-      <div class="grid grid-3">
-        <!-- Projektkarte 1 -->
-        <article id="case-01" class="card project">
-          <div class="thumb" aria-hidden="true"></div>
-          <div>
-            <span class="tag">Power BI</span>
-            <span class="tag">Python</span>
+          <span class="tag">Webseiten, Landingpages & UX</span>
+          <h1>Klare Websites & Landingpages – <span class="muted">die wirklich konvertieren</span>.</h1>
+          <p class="muted">
+            Schlanke, schnelle Websites mit klarem Fokus auf UX & Conversion. Sauberes HTML/CSS/JS,
+            Performance, SEO-Basics & Analytics – damit Besucher zu Kunden werden.
+          </p>
+          <!-- CTA-Buttons -->
+          <div style="display:flex;gap:12px;margin-top:14px">
+            <a class="btn primary" href="mailto:marlongreta1@gmail.com">Kostenloses Erstgespräch</a>
+            <a class="btn" href="#web">Web-Projekte ansehen</a>
           </div>
-          <h3>E-Commerce Dashboard: Umsatz, Marge, Retouren</h3>
-          <p>Shopify-/Amazon-CSV bereinigt, Datenmodell aufgebaut, KPI-Dashboard mit Monatsreport automatisiert.</p>
-          <ul class="muted" style="margin:0 0 4px 18px">
-            <li>– 8h/Woche manuelle Arbeit eingespart</li>
-            <li>– 360°-Sicht auf Produkte & Kampagnen</li>
-          </ul>
-          <a class="btn" href="#" aria-label="Details zur Fallstudie">Fallstudie (PDF)</a>
-        </article>
-
-        <!-- Projektkarte 2 -->
-        <article class="card project">
-          <div class="thumb" aria-hidden="true"></div>
-          <div>
-            <span class="tag">Excel</span>
-            <span class="tag">Automatisierung</span>
-          </div>
-          <h3>Finanz-Reporting: Monatsabschluss ohne Excel-Chaos</h3>
-          <p>VBA/Python-Workflow erstellt: Datenimporte, Plausibilitätsprüfungen, standardisierte Reports.</p>
-          <ul class="muted" style="margin:0 0 4px 18px">
-            <li>– Fehlerquote ↓ 90%</li>
-            <li>– Report-Zeit von 2 Tagen auf 2 Stunden</li>
-          </ul>
-          <a class="btn" href="#" aria-label="Details zur Fallstudie">Fallstudie (PDF)</a>
-        </article>
-
-        <!-- Projektkarte 3 -->
-        <article class="card project">
-          <div class="thumb" aria-hidden="true"></div>
-          <div>
-            <span class="tag">Web Scraping</span>
-            <span class="tag">EDA</span>
-          </div>
-          <h3>Preis-Monitoring: Wettbewerbsdaten & Alerts</h3>
-          <p>Preis- und Bestandsdaten gesammelt, Alerts & wöchentliche Zusammenfassung, Entscheidungsvorlage fürs Pricing.</p>
-          <ul class="muted" style="margin:0 0 4px 18px">
-            <li>– 12% Marge gesteigert</li>
-          </ul>
-          <a class="btn" href="#" aria-label="Details zur Fallstudie">Fallstudie (PDF)</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- ====================== LEISTUNGEN (Analytics etc.) ====================== -->
-    <section id="leistungen" class="section">
-      <h2>Leistungen</h2>
-      <div class="grid grid-2">
-        <div class="card service">
-          <div class="icon">📊</div>
-          <div>
-            <h3>Dashboards & KPIs (Power BI)</h3>
-            <p class="muted">Umsatz, Kosten, Marketing – alles in einem klaren Dashboard. Inklusive Datenmodell & DAX.</p>
+          <!-- KPI-Kacheln -->
+          <div class="kpis">
+            <div class="kpi">
+              <div class="muted">Go-Live</div>
+              <div class="price"><span class="num">7–21</span><span>&nbsp;Tage</span></div>
+            </div>
+            <div class="kpi">
+              <div class="muted">Performance</div>
+              <div class="price"><span class="num">90+</span><span>&nbsp;Lighthouse</span></div>
+            </div>
+            <div class="kpi">
+              <div class="muted">Zufriedenheit</div>
+              <div class="price"><span class="num">100%</span><span>&nbsp;Garantie*</span></div>
+            </div>
           </div>
         </div>
-        <div class="card service">
-          <div class="icon">⚙️</div>
-          <div>
-            <h3>Automatisierte Reports (Python/Excel)</h3>
-            <p class="muted">Wiederkehrende Excel-Aufgaben automatisieren – robust, dokumentiert, versionsverwaltet.</p>
+      </section>
+
+
+        <!-- ====================== WEB & UX (jetzt direkt nach Hero) ====================== -->
+        <section id="web" class="section reveal">
+          <h2>Web & UX</h2>
+
+          <!-- kurze Einleitung (optional) -->
+          <p class="muted" style="margin:6px 0 18px">
+            Performante Websites & Landingpages – sauber umgesetzt, messbar und wartbar.
+          </p>
+
+          <div class="grid grid-3 reveal reveal-stagger">
+            <!-- Web-Projekt 1 -->
+            <article class="card project">
+              
+              <div class="thumb" aria-hidden="true"
+                  style="background:
+                    radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
+                    radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
+                    url('images/landing1.jpg') center/cover no-repeat, #0e1522;
+                  ">
+              </div>
+              <div>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">Performance</span>
+              </div>
+              <h3>Landingpage für Kampagne</h3>
+              <p>Leichtgewichtige Page mit klarer Conversion-Story.</p>
+              <ul class="muted" style="margin:0 0 4px 18px">
+                <li>– Lighthouse 95+/100</li>
+                <li>– +28% Anfragen</li>
+              </ul>
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <a class="btn" href="https://dergutefreund.at/" target="_blank" rel="noopener">🟢 Live</a>
+                <a class="btn" href="https://github.com/mrgreata" target="_blank" rel="noopener">👨‍💻 Code</a>
+              </div>
+            </article>
+
+            <!-- Web-Projekt 2 -->
+            <article class="card project">
+              <div class="thumb" aria-hidden="true"
+                  style="background:
+                    radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
+                    radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
+                    url('images/portfolio.jpg') center/cover no-repeat, #0e1522;">
+              </div>
+              <div>
+                <span class="tag">Vanilla JS</span>
+                <span class="tag">SEO</span>
+              </div>
+              <h3>Portfolio/Company Site</h3>
+              <p>Saubere Informationsarchitektur, schnelle Ladezeiten, On-Page SEO.</p>
+              <ul class="muted" style="margin:0 0 4px 18px">
+                <li>– Core Web Vitals „grün“</li>
+              </ul>
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <a class="btn" href="https://mrgreata.github.io/Web-Medics/" target="_blank" rel="noopener">🟢 Live</a>
+                <a class="btn" href="https://github.com/mrgreata/Web-Medics" target="_blank" rel="noopener">👨‍💻 Code</a>
+              </div>
+            </article>
+
+            <!-- Web-Projekt 3 -->
+            <article class="card project">
+              <div class="thumb" aria-hidden="true"
+                  style="background:
+                    radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
+                    radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
+                    url('images/admin-ui.jpg') center/cover no-repeat, #0e1522;">
+              </div>
+              <div>
+                <span class="tag">API</span>
+                <span class="tag">Dashboard UI</span>
+              </div>
+              <h3>Mini-Admin mit API-Einbindung</h3>
+              <p>Frontend für interne Datenansicht (Read-only) mit Fetch/CSV-Export.</p>
+              <ul class="muted" style="margin:0 0 4px 18px">
+                <li>– <abbr title="Time To Interactive">TTI</abbr> &lt; 1.5s</li>
+              </ul>
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <a class="btn" href="https://live-link-3.tld" target="_blank" rel="noopener">🟢 Live</a>
+                <a class="btn" href="https://github.com/mrgreata" target="_blank" rel="noopener">👨‍💻 Code</a>
+              </div>
+            </article>
           </div>
-        </div>
-        <div class="card service">
-          <div class="icon">🧹</div>
-          <div>
-            <h3>Datenaufbereitung & Validierung</h3>
-            <p class="muted">Bereinigung, Zusammenführung, Plausibilitätschecks, Data Quality Rules.</p>
+        </section>
+
+        <!-- ====================== PAKETE & PREISE – WEB & UX (auch vor Analytics) ====================== -->
+        <section class="section reveal">
+          <h2>Pakete & Preise – Web & UX</h2>
+          <div class="grid grid-3">
+            
+            <div class="card">
+              <h3>Starter</h3>
+              <p class="muted">Onepager oder kleine Portfolio-Seite</p>
+              <div class="price"><span class="num">€ 890</span><span>einmalig</span></div>
+              <ul class="muted" style="margin-left:18px">
+                <li> bis 3 Unterseiten</li>
+                <li> Responsive Design</li>
+                <li> Grund-SEO & Performance-Setup</li>
+              </ul>
+              <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
+            </div>
+            
+            <div class="card">
+              <h3>Business</h3>
+              <p class="muted">Individuelle Website mit CMS & UX-Fokus</p>
+              <div class="price"><span class="num">€ 2.490</span><span>einmalig</span></div>
+              <ul class="muted" style="margin-left:18px">
+                <li> bis 8 Unterseiten</li>
+                <li> Individuelles UI-Design (Figma oder direkt im Code)</li>
+                <li> CMS-Integration (z. B. Webflow, WordPress oder Headless)</li>
+                <li> SEO-Basics & Launch-Optimierung</li>
+              </ul>
+              <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
+            </div>
+            
+            <div class="card">
+              <h3>Care</h3>
+              <p class="muted">Laufende Betreuung, Updates & Optimierung</p>
+              <div class="price"><span class="num">€ 190</span><span>/Monat</span></div>
+              <ul class="muted" style="margin-left:18px">
+                <li> Regelmäßige Backups & Sicherheitsupdates</li>
+                <li> Inhaltspflege (Texte, Bilder, Blog etc.)</li>
+                <li> Kleine Design- oder UX-Verbesserungen</li>
+                <li> Priorisierter Support</li>
+              </ul>
+              <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
+            </div>
+
           </div>
-        </div>
-        <div class="card service">
-          <div class="icon">🧭</div>
-          <div>
-            <h3>Data Strategy & Schulung</h3>
-            <p class="muted">Prozesse, Rollen, Guidelines. Schulungen für Teams zu Excel, Power BI, Python.</p>
+        </section>
+
+        <!-- ====================== PROJEKTE (Analytics/Reporting) ====================== -->
+        <section id="projekte" class="section reveal">
+          <div class="grid grid-3 reveal reveal-stagger">
+            <!-- Projektkarte 1 -->
+            <article id="case-01" class="card project">
+              <div class="thumb" aria-hidden="true"></div>
+              <div>
+                <span class="tag">Power BI</span>
+                <span class="tag">Python</span>
+              </div>
+              <h3>E-Commerce Dashboard: Umsatz, Marge, Retouren</h3>
+              <p>Shopify-/Amazon-CSV bereinigt, Datenmodell aufgebaut, KPI-Dashboard mit Monatsreport automatisiert.</p>
+              <ul class="muted" style="margin:0 0 4px 18px">
+                <li>– 8h/Woche manuelle Arbeit eingespart</li>
+                <li>– 360°-Sicht auf Produkte & Kampagnen</li>
+              </ul>
+              <a class="btn" href="#" aria-label="Details zur Fallstudie">Fallstudie (PDF)</a>
+            </article>
+
+            <!-- Projektkarte 2 -->
+            <article class="card project">
+              <div class="thumb" aria-hidden="true"></div>
+              <div>
+                <span class="tag">Excel</span>
+                <span class="tag">Automatisierung</span>
+              </div>
+              <h3>Finanz-Reporting: Monatsabschluss ohne Excel-Chaos</h3>
+              <p>VBA/Python-Workflow erstellt: Datenimporte, Plausibilitätsprüfungen, standardisierte Reports.</p>
+              <ul class="muted" style="margin:0 0 4px 18px">
+                <li>– Fehlerquote ↓ 90%</li>
+                <li>– Report-Zeit von 2 Tagen auf 2 Stunden</li>
+              </ul>
+              <a class="btn" href="#" aria-label="Details zur Fallstudie">Fallstudie (PDF)</a>
+            </article>
+
+            <!-- Projektkarte 3 -->
+            <article class="card project">
+              <div class="thumb" aria-hidden="true"></div>
+              <div>
+                <span class="tag">Web Scraping</span>
+                <span class="tag">EDA</span>
+              </div>
+              <h3>Preis-Monitoring: Wettbewerbsdaten & Alerts</h3>
+              <p>Preis- und Bestandsdaten gesammelt, Alerts & wöchentliche Zusammenfassung, Entscheidungsvorlage fürs Pricing.</p>
+              <ul class="muted" style="margin:0 0 4px 18px">
+                <li>– 12% Marge gesteigert</li>
+              </ul>
+              <a class="btn" href="#" aria-label="Details zur Fallstudie">Fallstudie (PDF)</a>
+            </article>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- ====================== PAKETE & PREISE – ANALYTICS (jetzt nachgelagert) ====================== -->
-    <section class="section">
-      <h2>Pakete & Preise - Analytics</h2>
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Starter</h3>
-          <p class="muted">Kleines Dashboard oder Report-Automation</p>
-          <div class="price"><span class="num">€ 490</span><span>einmalig</span></div>
-          <ul class="muted" style="margin-left:18px">
-            <li> 1 Datenquelle</li>
-            <li> 3 Kern-KPIs</li>
-            <li> Handover-Call</li>
-          </ul>
-          <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
-        </div>
-        <div class="card">
-          <h3>Business</h3>
-          <p class="muted">Vollständiges KPI-Dashboard</p>
-          <div class="price"><span class="num">€ 1.490</span><span>einmalig</span></div>
-          <ul class="muted" style="margin-left:18px">
-            <li> bis 3 Datenquellen</li>
-            <li> inkl. Dokumentation</li>
-            <li> 2 Wochen Support</li>
-          </ul>
-          <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
-        </div>
-        <div class="card">
-          <h3>Care</h3>
-          <p class="muted">Monatliche Betreuung & Updates</p>
-          <div class="price"><span class="num">€ 190</span><span>/Monat</span></div>
-          <ul class="muted" style="margin-left:18px">
-            <li> Datenchecks</li>
-            <li> KPI-Updates</li>
-            <li> Priorisierter Support</li>
-          </ul>
-          <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
-        </div>
-      </div>
-    </section>
+        <!-- ====================== LEISTUNGEN (Analytics etc.) ====================== -->
+        <section id="leistungen" class="section">
+          <h2>Leistungen</h2>
+          <div class="grid grid-2">
+            <div class="card service">
+              <div class="icon">📊</div>
+              <div>
+                <h3>Dashboards & KPIs (Power BI)</h3>
+                <p class="muted">Umsatz, Kosten, Marketing – alles in einem klaren Dashboard. Inklusive Datenmodell & DAX.</p>
+              </div>
+            </div>
+            <div class="card service">
+              <div class="icon">⚙️</div>
+              <div>
+                <h3>Automatisierte Reports (Python/Excel)</h3>
+                <p class="muted">Wiederkehrende Excel-Aufgaben automatisieren – robust, dokumentiert, versionsverwaltet.</p>
+              </div>
+            </div>
+            <div class="card service">
+              <div class="icon">🧹</div>
+              <div>
+                <h3>Datenaufbereitung & Validierung</h3>
+                <p class="muted">Bereinigung, Zusammenführung, Plausibilitätschecks, Data Quality Rules.</p>
+              </div>
+            </div>
+            <div class="card service">
+              <div class="icon">🧭</div>
+              <div>
+                <h3>Data Strategy & Schulung</h3>
+                <p class="muted">Prozesse, Rollen, Guidelines. Schulungen für Teams zu Excel, Power BI, Python.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <!-- ====================== ÜBER MICH ====================== -->
-    <section class="section">
-      <h2>Über mich</h2>
-      <div class="card">
-        <p>Ich bin <strong>Marlon Greta</strong>, Wirtschaftsinformatiker mit Fokus auf <em>Software Engineeering, Data Analysis, Power BI</em> & Prozessautomatisierung. Ich verbinde Tech & Business, damit Entscheidungen auf Daten beruhen – schnell, pragmatisch, verständlich.</p>
-        <p class="muted">Tech-Stack: Web(HTML, CSS, JS), Frontend (Angular, Next, Vue), Backend (Java, Spring-Boot, Git), Data (Python, Power BI, SQL, Excel/VBA), SAP/ABAP.</p>
-        <div class="stack">
-          <span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Excel/VBA</span><span class="tag">SQL</span><span class="tag">SAP</span><span class="tag">Looker Studio</span>
-        </div>
-      </div>
-    </section>
+        <!-- ====================== PAKETE & PREISE – ANALYTICS (jetzt nachgelagert) ====================== -->
+        <section class="section">
+          <h2>Pakete & Preise - Analytics</h2>
+          <div class="grid grid-3">
+            <div class="card">
+              <h3>Starter</h3>
+              <p class="muted">Kleines Dashboard oder Report-Automation</p>
+              <div class="price"><span class="num">€ 490</span><span>einmalig</span></div>
+              <ul class="muted" style="margin-left:18px">
+                <li> 1 Datenquelle</li>
+                <li> 3 Kern-KPIs</li>
+                <li> Handover-Call</li>
+              </ul>
+              <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
+            </div>
+            <div class="card">
+              <h3>Business</h3>
+              <p class="muted">Vollständiges KPI-Dashboard</p>
+              <div class="price"><span class="num">€ 1.490</span><span>einmalig</span></div>
+              <ul class="muted" style="margin-left:18px">
+                <li> bis 3 Datenquellen</li>
+                <li> inkl. Dokumentation</li>
+                <li> 2 Wochen Support</li>
+              </ul>
+              <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
+            </div>
+            <div class="card">
+              <h3>Care</h3>
+              <p class="muted">Monatliche Betreuung & Updates</p>
+              <div class="price"><span class="num">€ 190</span><span>/Monat</span></div>
+              <ul class="muted" style="margin-left:18px">
+                <li> Datenchecks</li>
+                <li> KPI-Updates</li>
+                <li> Priorisierter Support</li>
+              </ul>
+              <a class="btn" href="mailto:marlongreta1@gmail.com">Anfragen</a>
+            </div>
+          </div>
+        </section>
 
-    <!-- ====================== KONTAKT ====================== -->
-    <section class="section">
-      <div class="card">
-        <h2>Kontakt</h2>
-        <p class="muted">Schreib mir, was du messen oder automatisieren möchtest. Ich antworte innerhalb von 24 Stunden.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <a class="btn primary" href="mailto:marlongreta1@gmail.com">E-Mail</a>
-          <a class="btn primary" href="tel:06767022807">Anrufen</a>
-          <a class="btn" href="https://github.com/mrgreata" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://linkedin.com/in/marlon-greta" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-      <p class="muted" style="font-size:12px;margin-top:10px">* Zufriedenheitsgarantie: Wenn das vereinbarte Ergebnis nicht erreicht wird, fallen keine Kosten an.</p>
-    </section>
+        <!-- ====================== ÜBER MICH ====================== -->
+        <section class="section">
+          <h2>Über mich</h2>
+          <div class="card">
+            <p>Ich bin <strong>Marlon Greta</strong>, Wirtschaftsinformatiker mit Fokus auf <em>Software Engineeering, Data Analysis, Power BI</em> & Prozessautomatisierung. Ich verbinde Tech & Business, damit Entscheidungen auf Daten beruhen – schnell, pragmatisch, verständlich.</p>
+            <p class="muted">Tech-Stack: Web(HTML, CSS, JS), Frontend (Angular, Next, Vue), Backend (Java, Spring-Boot, Git), Data (Python, Power BI, SQL, Excel/VBA), SAP/ABAP.</p>
+            <div class="stack">
+              </div>
+              <div class="tech-icons">
+              <img src="/developer-portfolio/icons/python.svg" alt="Python">
+              <img src="/developer-portfolio/icons/javascript.svg" alt="JavaScript">
+              <img src="/developer-portfolio/icons/angular.svg" alt="Angular">
+              <img src="/developer-portfolio/icons/springboot.svg" alt="Spring Boot">
+              <img src="/developer-portfolio/icons/git.svg" alt="Git">
+              <img src="/developer-portfolio/icons/postgresql.svg" alt="PostgreSQL">
+            </div>
+          </div>
+        </section>
 
-    <!-- ====================== FOOTER ====================== -->
-    <footer class="container footer">
-      © <span id="y"></span> Marlon Greta – Data Analysis & Automatisierung. Alle Rechte vorbehalten.
-    </footer>
-  </main>
+        <!-- ====================== KONTAKT ====================== -->
+        <section class="section reveal">
+          <div class="card">
+            <h2>Kontakt</h2>
+            <p class="muted">Schreib mir, was du messen oder automatisieren möchtest. Ich antworte innerhalb von 24 Stunden.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <a class="btn primary" href="mailto:marlongreta1@gmail.com">E-Mail</a>
+              <a class="btn primary" href="tel:06767022807">Anrufen</a>
+              <a class="btn" href="https://github.com/mrgreata" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn" href="https://linkedin.com/in/marlon-greta" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+          <p class="muted" style="font-size:12px;margin-top:10px">* Zufriedenheitsgarantie: Wenn das vereinbarte Ergebnis nicht erreicht wird, fallen keine Kosten an.</p>
+        </section>
 
-  <!-- JS: aktuelles Jahr im Footer -->
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-  <script src="track.js"></script>
+        <!-- ====================== FOOTER ====================== -->
+        <footer class="container footer">
+          © <span id="y"></span> Marlon Greta – Data Analysis & Automatisierung. Alle Rechte vorbehalten.
+        </footer>
+      </main>
+
+      <!-- JS: aktuelles Jahr im Footer -->
+      <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+      </script>
+      <script src="track.js"></script>
+      <script src="cursor.js"></script>
+      <script src="liquid.js"></script>
+      <script src="reveal.js"></script>
+      <script src="fade.js"></script>
+  </div>
+
+  <!-- SVG Filter für Liquid Glass Effect -->
+<svg width="0" height="0" style="position:absolute">
+  <filter id="liquid-filter">
+    <feTurbulence
+      type="fractalNoise"
+      baseFrequency="0.012"
+      numOctaves="2"
+      seed="2"
+      result="noise"
+    />
+    <feDisplacementMap
+      in="SourceGraphic"
+      in2="noise"
+      scale="0"
+      xChannelSelector="R"
+      yChannelSelector="G"
+    />
+  </filter>
+</svg>
+<script>
+  (function () {
+    const lang = navigator.language || navigator.userLanguage;
+    const isEnglish = lang.startsWith('en');
+
+    // nur weiterleiten, wenn User nicht schon manuell gewählt hat
+    if (isEnglish && !localStorage.getItem('lang')) {
+      window.location.replace('/en/');
+    }
+  })();
+</script>
+
 </body>
 </html>
