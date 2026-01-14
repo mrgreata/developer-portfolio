@@ -452,3 +452,23 @@ body.is-loaded{
   opacity:1;
   transform: translateY(-1px);
 }
+
+.thumb {
+  position: relative;
+  height: 180px;           /* oder was du nutzt */
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.card.project:hover .thumb::after {
+  opacity: 0.25;
+}
