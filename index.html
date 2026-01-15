@@ -57,8 +57,8 @@
       
 
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
-          <a class="btn primary" href="#page">Projekte ansehen</a>
-          <a class="btn btn-glass-liquid" href="mailto:marlongreta1@gmail.com">Projekt anfragen</a>
+          <a class="btn primary" data-track="cta" data-section="intro" data-label="view_projects" href="#page">Projekte ansehen</a>
+          <a class="btn btn-glass-liquid" data-track="cta" data-section="intro" data-label="project_inquiry" href="mailto:marlongreta1@gmail.com">Projekt anfragen</a>
         </div>
 
         
@@ -76,9 +76,9 @@
             <span class="muted">Antwort binnen 24h</span>
           </div>
           <nav>
-            <a class="btn" href="#web" aria-label="Zu Web & UX">Web & UX</a>
-            <a class="btn primary" href="mailto:marlongreta1@gmail.com" aria-label="Kontakt per E-Mail">Projekt anfragen</a>
-            <a class="btn" href="en/" onclick="localStorage.setItem('lang','en')">EN</a>
+            <a class="btn" data-track="nav" data-section="header" data-label="web_ux" href="#web" aria-label="Zu Web & UX">Web & UX</a>
+            <a class="btn primary" data-track="nav" data-section="header" data-label="project_inquiry" href="mailto:marlongreta1@gmail.com" aria-label="Kontakt per E-Mail">Projekt anfragen</a>
+            <a class="btn" data-track="nav" data-section="header" data-label="language_en" href="en/" onclick="localStorage.setItem('lang','en')">EN</a>
           </nav>
         </header>
         <!-- ====================== MAIN CONTENT ====================== -->
@@ -95,8 +95,8 @@
             </p>
             <!-- CTA-Buttons -->
             <div style="display:flex;gap:12px;margin-top:14px">
-              <a class="btn primary" href="mailto:marlongreta1@gmail.com">Kostenloses Erstgespräch</a>
-              <a class="btn" href="#web">Web-Projekte ansehen</a>
+              <a class="btn primary" data-track="cta" data-section="hero" data-label="free_call" href="mailto:marlongreta1@gmail.com">Kostenloses Erstgespräch</a>
+              <a class="btn" data-track="cta" data-section="hero" data-label="view_web_projects" href="#web">Web-Projekte ansehen</a>
             </div>
             <!-- KPI-Kacheln -->
             <div class="kpis">
@@ -129,7 +129,7 @@
             <div class="grid grid-3 reveal reveal-stagger">
             <!-- Web-Projekt 1 -->
               <article class="card project">
-              <a href="https://dergutefreund.at/" target="_blank" rel="noopener" aria-label="Projekt öffnen">
+              <a data-track="project" data-section="web" data-label="dergutefreund_card" href="https://dergutefreund.at/" target="_blank" rel="noopener" aria-label="Projekt öffnen">
                 <div class="thumb" aria-hidden="true"
                     style="background:
                       radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
@@ -149,14 +149,14 @@
                   <li>JavaScript-basiertes Quiz</li>
                 </ul>
                 <div style="display:flex;gap:10px;flex-wrap:wrap">
-                  <a class="btn" href="https://dergutefreund.at/" target="_blank" rel="noopener">🟢 Live</a>
-                  <a class="btn" href="https://github.com/mrgreata/dergutefreund" target="_blank" rel="noopener">👨‍💻 Code</a>
+                  <a class="btn" data-track="project" data-section="web" data-label="dergutefreund_live" href="https://dergutefreund.at/" target="_blank" rel="noopener">🟢 Live</a>
+                  <a class="btn" data-track="project" data-section="web" data-label="dergutefreund_code" href="https://github.com/mrgreata/dergutefreund" target="_blank" rel="noopener">👨‍💻 Code</a>
                 </div>
               </article>
               
               <!-- Web-Projekt 2 -->
               <article class="card project">
-                  <a href="https://mrgreata.github.io/medical-clinic-website/" target="_blank" rel="noopener" aria-label="Projekt öffnen">
+                  <a data-track="project" data-section="web" data-label="medics_card" href="https://mrgreata.github.io/medical-clinic-website/" target="_blank" rel="noopener" aria-label="Projekt öffnen">
                 <div class="thumb" aria-hidden="true"
                     style="background:
                       radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
@@ -175,14 +175,14 @@
                     <li>On-Page-SEO & Performance-Basics</li>
                   </ul>
                 <div style="display:flex;gap:10px;flex-wrap:wrap">
-                  <a class="btn" href="https://mrgreata.github.io/medical-clinic-website/" target="_blank" rel="noopener">🟢 Live</a>
-                  <a class="btn" href="https://github.com/mrgreata/Web-Medics" target="_blank" rel="noopener">👨‍💻 Code</a>
+                  <a class="btn" data-track="project" data-section="web" data-label="medics_live" href="https://mrgreata.github.io/medical-clinic-website/" target="_blank" rel="noopener">🟢 Live</a>
+                  <a class="btn" data-track="project" data-section="web" data-label="medics_code" href="https://github.com/mrgreata/Web-Medics" target="_blank" rel="noopener">👨‍💻 Code</a>
                 </div>
               </article>
               
               <!-- Web-Projekt 3 -->
               <article class="card project">
-                <a href="https://mrgreata.github.io/artmart-frontend/" target="_blank" rel="noopener">
+                <a data-track="project" data-section="web" data-label="artmart_card" href="https://mrgreata.github.io/artmart-frontend/" target="_blank" rel="noopener">
                 <div class="thumb" aria-hidden="true"
                     style="background:
                       radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
@@ -201,8 +201,8 @@
                     <li>Dynamische UI-Komponenten</li>
                   </ul>
                 <div style="display:flex;gap:10px;flex-wrap:wrap">
-                  <a class="btn" href="https://mrgreata.github.io/artmart-frontend/" target="_blank" rel="noopener">🟢 Live</a>
-                  <a class="btn" href="https://github.com/mrgreata/artmart-frontend" target="_blank" rel="noopener">👨‍💻 Code</a>
+                  <a class="btn" data-track="project" data-section="web" data-label="artmart_live" href="https://mrgreata.github.io/artmart-frontend/" target="_blank" rel="noopener">🟢 Live</a>
+                  <a class="btn" data-track="project" data-section="web" data-label="artmart_code" href="https://github.com/mrgreata/artmart-frontend" target="_blank" rel="noopener">👨‍💻 Code</a>
                 </div>
               </article>
             </section>
@@ -221,7 +221,7 @@
                   <li> Responsive Design</li>
                   <li> Grund-SEO & Performance-Setup</li>
                 </ul>
-                <a class="btn"
+                <a class="btn" data-track="cta" data-section="pricing" data-label="starter_inquiry"
                   href="mailto:marlongreta1@gmail.com?subject=Anfrage%20Web%20%26%20UX%20–%20Starter">
                   Anfragen
                 </a>
@@ -237,7 +237,7 @@
                   <li> CMS-Integration (z. B. Webflow, WordPress oder Headless)</li>
                   <li> SEO-Basics & Launch-Optimierung</li>
                 </ul>
-                <a class="btn"
+                <a class="btn" data-track="cta" data-section="pricing" data-label="business_inquiry"
                   href="mailto:marlongreta1@gmail.com?subject=Anfrage%20Web%20%26%20UX%20–%20Business">
                   Anfragen
                 </a>
@@ -253,7 +253,7 @@
                   <li> Kleine Design- oder UX-Verbesserungen</li>
                   <li> Priorisierter Support</li>
                 </ul>
-                <a class="btn"
+                <a class="btn" data-track="cta" data-section="pricing" data-label="care_inquiry"
                   href="mailto:marlongreta1@gmail.com?subject=Anfrage%20Web%20%26%20UX%20–%20Care">
                   Anfragen
                 </a>
@@ -274,11 +274,11 @@
               </div>
 
               <div class="pricing-custom-cta">
-                <a class="btn primary"
+                <a class="btn primary" data-track="cta" data-section="pricing" data-label="custom_inquiry"
                   href="mailto:marlongreta1@gmail.com?subject=Individuelle%20Anfrage%20Web%20%26%20SEO&body=Hi%20Marlon%2C%0A%0Akurz%20zu%20meinem%20Projekt%3A%0A-%20Branche%3A%20%0A-%20Ziel%3A%20%0A-%20Seitenumfang%3A%20%0A-%20Wunschfunktionen%3A%20%0A-%20Deadline%3A%20%0A-%20Budgetrahmen%3A%20%0A%0ADanke!">
                   Individuelle Anfrage
                 </a>
-                <a class="btn"
+                <a class="btn" data-track="cta" data-section="pricing" data-label="free_call"
                   href="mailto:marlongreta1@gmail.com?subject=Kostenloses%20Erstgespr%C3%A4ch%20Web%20%26%20SEO">
                   Kostenloses Erstgespräch
                 </a>
@@ -355,10 +355,10 @@
               <h2>Kontakt</h2>
               <p class="muted">Schreib mir, was du messen oder automatisieren möchtest. Ich antworte innerhalb von 24 Stunden.</p>
               <div style="display:flex;gap:12px;flex-wrap:wrap">
-                <a class="btn primary" href="mailto:marlongreta1@gmail.com">E-Mail</a>
-                <a class="btn primary" href="tel:06767022807">Anrufen</a>
-                <a class="btn" href="https://github.com/mrgreata" target="_blank" rel="noopener">GitHub</a>
-                <a class="btn" href="https://linkedin.com/in/marlon-greta" target="_blank" rel="noopener">LinkedIn</a>
+                <a class="btn primary" data-section="contact" data-track="social" data-label="email" href="mailto:marlongreta1@gmail.com">E-Mail</a>
+                <a class="btn primary" data-section="contact" data-track="social" data-label="telephone" href="tel:+436767022807">Anrufen</a>
+                <a class="btn" data-section="contact" data-track="social" data-label="github" href="https://github.com/mrgreata" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn" data-section="contact" data-track="social" data-label="linkedin" href="https://linkedin.com/in/marlon-greta" target="_blank" rel="noopener">LinkedIn</a>
               </div>
             </div>
           </section>

@@ -25,27 +25,59 @@
   requestAnimationFrame(loop);
 
   // Sende-Funktion (sendBeacon bevorzugt)
-  function send(kind="pageview") {
-    const payload = {
-      siteId: SITE_ID, kind,
-      url: location.href, path: location.pathname,
-      referrer: document.referrer || null, lang: navigator.language || null,
-      timeOnPageSec: Math.round(timeMs/1000), maxScroll,
-      sid, vid, ts: new Date().toISOString()
-    };
-    const body = new Blob([JSON.stringify(payload)], { type: "application/json" });
-    if (!navigator.sendBeacon || !navigator.sendBeacon(ENDPOINT, body)) {
-      fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body }).catch(()=>{});
-    }
+  function send(kind="pageview", extra={}) {
+  const payload = {
+    siteId: SITE_ID, kind,
+    url: location.href, path: location.pathname,
+    referrer: document.referrer || null, lang: navigator.language || null,
+    timeOnPageSec: Math.round(timeMs/1000), maxScroll,
+    sid, vid, ts: new Date().toISOString(),
+    ...extra
+  };
+  const body = new Blob([JSON.stringify(payload)], { type: "application/json" });
+  if (!navigator.sendBeacon || !navigator.sendBeacon(ENDPOINT, body)) {
+    fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body }).catch(()=>{});
   }
+}
+
 
   // Pageview und Abschluss
   addEventListener("load", () => send("pageview"));
-  addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") send("final"); });
-  addEventListener("pagehide", () => send("final"));
+  let sentFinal = false;
+  const sendFinalOnce = () => {
+    if (sentFinal) return;
+    sentFinal = true;
+    send("final");
+  };
+
+addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") sendFinalOnce();
+});
+addEventListener("pagehide", sendFinalOnce);
+
 
   // Optional: Beispiel-Klicktracking für deinen CTA
   // document.querySelectorAll('a.btn.primary[href^="mailto:"]').forEach(a => {
   //   a.addEventListener("click", () => send("click_cta"));
   // });
+
+  addEventListener("click", (e) => {
+  const el = e.target.closest("[data-track]");
+  if (!el) return;
+
+  const section = el.getAttribute("data-track");       // cta | nav | project | social
+  const label   = el.getAttribute("data-label") || "";
+  const ctx     = el.getAttribute("data-section") || "";
+
+  const href = el.getAttribute("href") || "";
+  const isOutbound = href.startsWith("http") && !href.includes(location.host);
+
+  send("click", {
+    eventSection: section,
+    eventLabel: label,
+    eventContext: ctx,
+    isOutbound
+  });
+}, { capture: true });
+
 })();
