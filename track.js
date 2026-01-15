@@ -34,11 +34,19 @@
     sid, vid, ts: new Date().toISOString(),
     ...extra
   };
-  const body = new Blob([JSON.stringify(payload)], { type: "application/json" });
-  if (!navigator.sendBeacon || !navigator.sendBeacon(ENDPOINT, body)) {
-    fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body }).catch(()=>{});
+
+  // IMPORTANT: text/plain -> no preflight
+  const body = JSON.stringify(payload);
+
+  if (!navigator.sendBeacon || !navigator.sendBeacon(ENDPOINT, new Blob([body], { type: "text/plain" }))) {
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body
+    }).catch(()=>{});
   }
 }
+
 
 
   // Pageview und Abschluss
