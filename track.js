@@ -1,5 +1,5 @@
 (() => {
-  // === ENDPOINT deines Workers ===
+  // === ENDPOINT des Workers ===
   const ENDPOINT = "https://portfolio-tracker.marlongreta1.workers.dev";
   const SITE_ID = "portfolio-v1";
 

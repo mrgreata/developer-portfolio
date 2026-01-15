@@ -1,339 +1,415 @@
-<!doctype html>
-<html lang="de">
-<head>
-  <!-- Meta & SEO -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Marlon Greta – Data Analyst & Wirtschaftsinformatik</title>
-  <meta name="description" content="Data Analysis, Power BI, Python & Automatisierung – Reports ohne Excel-Chaos. Portfolio & Projekte." />
-  <link rel="alternate" hreflang="de" href="https://mrgreata.github.io/developer-portfolio/" />
-  <link rel="alternate" hreflang="en" href="https://mrgreata.github.io/developer-portfolio/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://mrgreata.github.io/developer-portfolio/" />
+  <!doctype html>
+  <html lang="de">
+  <head>
+    <!-- Meta & SEO -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marlon Greta – Data Analyst & Wirtschaftsinformatik</title>
+    <meta name="description" content="Data Analysis, Power BI, Python & Automatisierung – Reports ohne Excel-Chaos. Portfolio & Projekte." />
+    <link rel="alternate" hreflang="de" href="https://mrgreata.github.io/developer-portfolio/" />
+    <link rel="alternate" hreflang="en" href="https://mrgreata.github.io/developer-portfolio/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://mrgreata.github.io/developer-portfolio/" />
 
 
-  <!-- Schriften -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Schriften -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Externes CSS -->
-  <link rel="stylesheet" href="style.css" />
+    <!-- Externes CSS -->
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- Strukturierte Daten (SEO) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Marlon Greta",
-    "jobTitle":"Data Analyst",
-    "url":"https://mrgreata.github.io/Portfolio/#case-01",
-    "sameAs":["https://github.com/mrgreata"],
-    "knowsAbout":["Power BI","Python","Excel","SQL","Automatisierung","Wirtschaftsinformatik","Web Development","SEO","Performance"]
-  }
-  </script>
-</head>
-<body>
-    <div id="page-fade"></div>
-  <div id="cursor-ring"></div>
+    <!-- Strukturierte Daten (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Person",
+      "name":"Marlon Greta",
+      "jobTitle":"Data Analyst",
+      "url":"https://mrgreata.github.io/Portfolio/#case-01",
+      "sameAs":["https://github.com/mrgreata"],
+      "knowsAbout":["Power BI","Python","Excel","SQL","Automatisierung","Wirtschaftsinformatik","Web Development","SEO","Performance"]
+    }
+    </script>
+  </head>
+  <body>
+      <div id="page-fade"></div>
+    <div id="cursor-ring"></div>
 
-  <!-- ====================== FULLSCREEN INTRO ====================== -->
-  <section class="intro" id="intro">
-      <video class="intro-bg"
-          autoplay
-          muted
-          loop
-          playsinline>
-      <source src="media/intro.webm" type="video/webm">
-      <source src="media/intro.mp4" type="video/mp4">
-      </video>
+    <!-- ====================== FULLSCREEN INTRO ====================== -->
+    <section class="intro" id="intro">
+        <video class="intro-bg"
+            autoplay
+            muted
+            loop
+            playsinline>
+        <source src="media/intro.webm" type="video/webm">
+        <source src="media/intro.mp4" type="video/mp4">
+        </video>
 
-    <div class="intro-brand">Marlon Greta</div>
-    <div class="intro-inner container">
-      <h1>
+      <div class="intro-brand">Marlon Greta</div>
+      <div class="intro-inner container">
+        <h1>
+        
+          <span class="muted">Digital Experience & Measurement.</span>
+        </h1>
+        <p>Von der Website bis zur datenbasierten Entscheidung.</p>
       
-        <span class="muted">Digital Experience & Measurement.</span>
-      </h1>
-      <p>Von der Website bis zur datenbasierten Entscheidung.</p>
-    
 
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
-        <a class="btn primary" href="#page">Projekte ansehen</a>
-        <a class="btn btn-glass-liquid" href="mailto:marlongreta1@gmail.com">Projekt anfragen</a>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
+          <a class="btn primary" href="#page">Projekte ansehen</a>
+          <a class="btn btn-glass-liquid" href="mailto:marlongreta1@gmail.com">Projekt anfragen</a>
+        </div>
+
+        
       </div>
+    </section>
 
-      
-    </div>
-  </section>
+    <!-- ====================== HEADER / NAV ====================== -->
+    <div id="page">
 
-  <!-- ====================== HEADER / NAV ====================== -->
-   <div id="page">
-
-      <header class="container nav">
-        <div class="brand">
-          <span class="badge">Verfügbar für Projekte</span>
-          <!-- Trennpunkt zwischen Badges / Status -->
-          <span style="opacity:.6">•</span>
-          <span class="muted">Antwort binnen 24h</span>
-        </div>
-        <nav>
-          <a class="btn" href="#web" aria-label="Zu Web & UX">Web & UX</a>
-          <a class="btn primary" href="mailto:marlongreta1@gmail.com" aria-label="Kontakt per E-Mail">Projekt anfragen</a>
-          <a class="btn" href="en/" onclick="localStorage.setItem('lang','en')">EN</a>
-        </nav>
-      </header>
-      <!-- ====================== MAIN CONTENT ====================== -->
-    <main class="container">
-      <!-- ====================== HERO ====================== -->
-      <section class="hero reveal">
-        <!-- Hero-Textkarte (USP, Call-to-Action, KPIs) -->
-        <div class="card">
-          <span class="tag">Webseiten, Landingpages & UX</span>
-          <h1>Klare Websites & Landingpages – <span class="muted">die wirklich konvertieren</span>.</h1>
-          <p class="muted">
-            Schlanke, schnelle Websites mit klarem Fokus auf UX & Conversion. Sauberes HTML/CSS/JS,
-            Performance, SEO-Basics & Analytics – damit Besucher zu Kunden werden.
-          </p>
-          <!-- CTA-Buttons -->
-          <div style="display:flex;gap:12px;margin-top:14px">
-            <a class="btn primary" href="mailto:marlongreta1@gmail.com">Kostenloses Erstgespräch</a>
-            <a class="btn" href="#web">Web-Projekte ansehen</a>
+        <header class="container nav">
+          <div class="brand">
+            <span class="badge">Verfügbar für Projekte</span>
+            <!-- Trennpunkt zwischen Badges / Status -->
+            <span style="opacity:.6">•</span>
+            <span class="muted">Antwort binnen 24h</span>
           </div>
-          <!-- KPI-Kacheln -->
-          <div class="kpis">
-            <div class="kpi">
-              <div class="muted">Go-Live</div>
-              <div class="price"><span class="num">7–21</span><span>&nbsp;Tage</span></div>
+          <nav>
+            <a class="btn" href="#web" aria-label="Zu Web & UX">Web & UX</a>
+            <a class="btn primary" href="mailto:marlongreta1@gmail.com" aria-label="Kontakt per E-Mail">Projekt anfragen</a>
+            <a class="btn" href="en/" onclick="localStorage.setItem('lang','en')">EN</a>
+          </nav>
+        </header>
+        <!-- ====================== MAIN CONTENT ====================== -->
+      <main class="container">
+        <!-- ====================== HERO ====================== -->
+        <section class="hero reveal">
+          <!-- Hero-Textkarte (USP, Call-to-Action, KPIs) -->
+          <div class="card">
+            
+            <h1>Klare Websites & Landingpages – <span class="muted">die wirklich konvertieren</span>.</h1>
+            <p class="muted">
+              Schlanke, schnelle Websites mit klarem Fokus auf UX & Conversion. Sauberes HTML/CSS/JS,
+              Performance, SEO-Basics & Analytics – damit Besucher zu Kunden werden.
+            </p>
+            <!-- CTA-Buttons -->
+            <div style="display:flex;gap:12px;margin-top:14px">
+              <a class="btn primary" href="mailto:marlongreta1@gmail.com">Kostenloses Erstgespräch</a>
+              <a class="btn" href="#web">Web-Projekte ansehen</a>
             </div>
-            <div class="kpi">
-              <div class="muted">Performance</div>
-              <div class="price"><span class="num">90+</span><span>&nbsp;Lighthouse</span></div>
-            </div>
-            <div class="kpi">
-              <div class="muted">Zufriedenheit</div>
-              <div class="price"><span class="num">100%</span><span>&nbsp;Garantie*</span></div>
+            <!-- KPI-Kacheln -->
+            <div class="kpis">
+              <div class="kpi">
+                <div class="muted">Go-Live</div>
+                <div class="price"><span class="num">7–21</span><span>&nbsp;Tage</span></div>
+              </div>
+              <div class="kpi">
+                <div class="muted">Performance</div>
+                <div class="price"><span class="num">90+</span><span>&nbsp;Lighthouse</span></div>
+              </div>
+              <div class="kpi">
+                <div class="muted">Zufriedenheit</div>
+                <div class="price"><span class="num">100%</span><span>&nbsp;Garantie*</span></div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
 
-        <!-- ====================== WEB & UX (jetzt direkt nach Hero) ====================== -->
-        <section id="web" class="section reveal">
-          <h2>Web & UX</h2>
+          <!-- ====================== WEB & UX (jetzt direkt nach Hero) ====================== -->
+          <section id="web" class="section reveal">
+            <h2>Web & UX</h2>
 
-          <!-- kurze Einleitung (optional) -->
-          <p class="muted" style="margin:6px 0 18px">
-            Performante Websites & Landingpages – sauber umgesetzt, messbar und wartbar.
-          </p>
+            <!-- kurze Einleitung (optional) -->
+            <p class="muted" style="margin:6px 0 18px">
+              Performante Websites & Landingpages – sauber umgesetzt, messbar und wartbar.
+            </p>
 
-          <div class="grid grid-3 reveal reveal-stagger">
-           <!-- Web-Projekt 1 -->
-            <article class="card project">
-            <a href="https://dergutefreund.at/" target="_blank" rel="noopener" aria-label="Projekt öffnen">
-              <div class="thumb" aria-hidden="true"
-                  style="background:
-                    radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
-                    radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
-                    url('images/gedichte.png') center/cover no-repeat, #0e1522;
-                  ">
-              </div>
-              <div>
-                <span class="tag">HTML/CSS</span>
-                <span class="tag">Performance</span>
-              </div>
-              <h3>Content-Website mit Artikeln</h3>
-              <p>Statische Website mit Gedichten, Artikeln und interaktivem Quiz – fokusiert auf Klarheit, Performance und Struktur.</p>
-              <ul class="muted" style="margin:0 0 4px 18px">
-                <br>
-                <li>Mehrere Inhaltsseiten & Navigation</li>
-                <li>JavaScript-basiertes Quiz</li>
-              </ul>
-              <div style="display:flex;gap:10px;flex-wrap:wrap">
-                <a class="btn" href="https://dergutefreund.at/" target="_blank" rel="noopener">🟢 Live</a>
-                <a class="btn" href="https://github.com/mrgreata/dergutefreund" target="_blank" rel="noopener">👨‍💻 Code</a>
-              </div>
-            </article>
-            
-            <!-- Web-Projekt 2 -->
-            <article class="card project">
-                <a href="https://mrgreata.github.io/medical-clinic-website/" target="_blank" rel="noopener" aria-label="Projekt öffnen">
-              <div class="thumb" aria-hidden="true"
-                  style="background:
-                    radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
-                    radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
-                    url('images/medics.png') center/cover no-repeat, #0e1522;">
-              </div>
-              <div>
-                <span class="tag">Vanilla JS</span>
-                <span class="tag">SEO</span>
-              </div>
-              <h3>Medical Clinic Website</h3>
-                <p>Responsive Multi-Page-Website für eine Arztpraxis mit Fokus auf klare Struktur, gute Lesbarkeit und einfache Nutzerführung.</p>
+            <div class="grid grid-3 reveal reveal-stagger">
+            <!-- Web-Projekt 1 -->
+              <article class="card project">
+              <a href="https://dergutefreund.at/" target="_blank" rel="noopener" aria-label="Projekt öffnen">
+                <div class="thumb" aria-hidden="true"
+                    style="background:
+                      radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
+                      radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
+                      url('images/gedichte.png') center/cover no-repeat, #0e1522;
+                    ">
+                </div>
+                <div>
+                  <span class="tag">HTML/CSS</span>
+                  <span class="tag">Performance</span>
+                </div>
+                <h3>Content-Website mit Artikeln</h3>
+                <p>Statische Website mit Gedichten, Artikeln und interaktivem Quiz – fokusiert auf Klarheit, Performance und Struktur.</p>
                 <ul class="muted" style="margin:0 0 4px 18px">
                   <br>
-                  <li>Mobile-optimiertes Layout</li>
-                  <li>On-Page-SEO & Performance-Basics</li>
+                  <li>Mehrere Inhaltsseiten & Navigation</li>
+                  <li>JavaScript-basiertes Quiz</li>
                 </ul>
-              <div style="display:flex;gap:10px;flex-wrap:wrap">
-                <a class="btn" href="https://mrgreata.github.io/medical-clinic-website/" target="_blank" rel="noopener">🟢 Live</a>
-                <a class="btn" href="https://github.com/mrgreata/Web-Medics" target="_blank" rel="noopener">👨‍💻 Code</a>
+                <div style="display:flex;gap:10px;flex-wrap:wrap">
+                  <a class="btn" href="https://dergutefreund.at/" target="_blank" rel="noopener">🟢 Live</a>
+                  <a class="btn" href="https://github.com/mrgreata/dergutefreund" target="_blank" rel="noopener">👨‍💻 Code</a>
+                </div>
+              </article>
+              
+              <!-- Web-Projekt 2 -->
+              <article class="card project">
+                  <a href="https://mrgreata.github.io/medical-clinic-website/" target="_blank" rel="noopener" aria-label="Projekt öffnen">
+                <div class="thumb" aria-hidden="true"
+                    style="background:
+                      radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
+                      radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
+                      url('images/medics.png') center/cover no-repeat, #0e1522;">
+                </div>
+                <div>
+                  <span class="tag">Vanilla JS</span>
+                  <span class="tag">SEO</span>
+                </div>
+                <h3>Medical Clinic Website</h3>
+                  <p>Responsive Multi-Page-Website für eine Arztpraxis mit Fokus auf klare Struktur, gute Lesbarkeit und einfache Nutzerführung.</p>
+                  <ul class="muted" style="margin:0 0 4px 18px">
+                    <br>
+                    <li>Mobile-optimiertes Layout</li>
+                    <li>On-Page-SEO & Performance-Basics</li>
+                  </ul>
+                <div style="display:flex;gap:10px;flex-wrap:wrap">
+                  <a class="btn" href="https://mrgreata.github.io/medical-clinic-website/" target="_blank" rel="noopener">🟢 Live</a>
+                  <a class="btn" href="https://github.com/mrgreata/Web-Medics" target="_blank" rel="noopener">👨‍💻 Code</a>
+                </div>
+              </article>
+              
+              <!-- Web-Projekt 3 -->
+              <article class="card project">
+                <a href="https://mrgreata.github.io/artmart-frontend/" target="_blank" rel="noopener">
+                <div class="thumb" aria-hidden="true"
+                    style="background:
+                      radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
+                      radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
+                      url('images/artmart.png') center/cover no-repeat, #0e1522;">
+                </div>
+                <div>
+                  <span class="tag">API</span>
+                  <span class="tag">Dashboard UI</span>
+                </div>
+                <h3>Artmart – Frontend Web Application</h3>
+                  <p>Client-seitige Web-Anwendung mit Produktübersicht, Konfiguration und Warenkorb, umgesetzt als modulare Single-Page-Struktur.</p>
+                  <ul class="muted" style="margin:0 0 4px 18px">
+                    <br>
+                    <li>Public API-Integration (Fetch)</li>
+                    <li>Dynamische UI-Komponenten</li>
+                  </ul>
+                <div style="display:flex;gap:10px;flex-wrap:wrap">
+                  <a class="btn" href="https://mrgreata.github.io/artmart-frontend/" target="_blank" rel="noopener">🟢 Live</a>
+                  <a class="btn" href="https://github.com/mrgreata/artmart-frontend" target="_blank" rel="noopener">👨‍💻 Code</a>
+                </div>
+              </article>
+            </section>
+
+          <!-- ====================== PAKETE & PREISE – WEB & UX (auch vor Analytics) ====================== -->
+          <section class="section reveal pricing">
+            <h2>Pakete & Preise – Web & UX</h2>
+            <div class="grid grid-2">
+              
+              <div class="card">
+                <h3>Starter</h3>
+                <p class="muted">Onepager oder kleine Portfolio-Seite</p>
+                <div class="price"><span class="num">€ 890</span><span>einmalig</span></div>
+                <ul class="muted" style="margin-left:18px">
+                  <li> bis 3 Unterseiten</li>
+                  <li> Responsive Design</li>
+                  <li> Grund-SEO & Performance-Setup</li>
+                </ul>
+                <a class="btn"
+                  href="mailto:marlongreta1@gmail.com?subject=Anfrage%20Web%20%26%20UX%20–%20Starter">
+                  Anfragen
+                </a>
               </div>
-            </article>
-            
-            <!-- Web-Projekt 3 -->
-            <article class="card project">
-              <a href="https://mrgreata.github.io/artmart-frontend/" target="_blank" rel="noopener">
-              <div class="thumb" aria-hidden="true"
-                  style="background:
-                    radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
-                    radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
-                    url('images/artmart.png') center/cover no-repeat, #0e1522;">
+              
+              <div class="card">
+                <h3>Business</h3>
+                <p class="muted">Individuelle Website mit CMS & UX-Fokus</p>
+                <div class="price"><span class="num">€ 2.490</span><span>einmalig</span></div>
+                <ul class="muted" style="margin-left:18px">
+                  <li> bis 8 Unterseiten</li>
+                  <li> Individuelles UI-Design (Figma oder direkt im Code)</li>
+                  <li> CMS-Integration (z. B. Webflow, WordPress oder Headless)</li>
+                  <li> SEO-Basics & Launch-Optimierung</li>
+                </ul>
+                <a class="btn"
+                  href="mailto:marlongreta1@gmail.com?subject=Anfrage%20Web%20%26%20UX%20–%20Business">
+                  Anfragen
+                </a>
               </div>
-              <div>
-                <span class="tag">API</span>
-                <span class="tag">Dashboard UI</span>
+              
+              <div class="card">
+                <h3>Care</h3>
+                <p class="muted">Laufende Betreuung, Updates & Optimierung</p>
+                <div class="price"><span class="num">€ 190</span><span>/Monat</span></div>
+                <ul class="muted" style="margin-left:18px">
+                  <li> Regelmäßige Backups & Sicherheitsupdates</li>
+                  <li> Inhaltspflege (Texte, Bilder, Blog etc.)</li>
+                  <li> Kleine Design- oder UX-Verbesserungen</li>
+                  <li> Priorisierter Support</li>
+                </ul>
+                <a class="btn"
+                  href="mailto:marlongreta1@gmail.com?subject=Anfrage%20Web%20%26%20UX%20–%20Care">
+                  Anfragen
+                </a>
               </div>
-              <h3>Artmart – Frontend Web Application</h3>
-                <p>Client-seitige Web-Anwendung mit Produktübersicht, Konfiguration und Warenkorb, umgesetzt als modulare Single-Page-Struktur.</p>
-                <ul class="muted" style="margin:0 0 4px 18px">
+
+              <div class="pricing-custom card">
+              
+               <div>
+                <h3>Individuelle Lösung</h3>
+                <p class="muted">
+                  Passt keines der Pakete, erstelle ich ein maßgeschneidertes Angebot.
+                  Abgestimmt auf Umfang, Zielgruppe und technische Anforderungen.
                   <br>
-                  <li>Public API-Integration (Fetch)</li>
-                  <li>Dynamische UI-Komponenten</li>
-                </ul>
-              <div style="display:flex;gap:10px;flex-wrap:wrap">
-                <a class="btn" href="https://mrgreata.github.io/artmart-frontend/" target="_blank" rel="noopener">🟢 Live</a>
-                <a class="btn" href="https://github.com/mrgreata/artmart-frontend" target="_blank" rel="noopener">👨‍💻 Code</a>
+                  <br>
+                  <br>
+                  Erstgespräch kostenlos & unverbindlich.
+                </p>
               </div>
-            </article>
+
+              <div class="pricing-custom-cta">
+                <a class="btn primary"
+                  href="mailto:marlongreta1@gmail.com?subject=Individuelle%20Anfrage%20Web%20%26%20SEO&body=Hi%20Marlon%2C%0A%0Akurz%20zu%20meinem%20Projekt%3A%0A-%20Branche%3A%20%0A-%20Ziel%3A%20%0A-%20Seitenumfang%3A%20%0A-%20Wunschfunktionen%3A%20%0A-%20Deadline%3A%20%0A-%20Budgetrahmen%3A%20%0A%0ADanke!">
+                  Individuelle Anfrage
+                </a>
+                <a class="btn"
+                  href="mailto:marlongreta1@gmail.com?subject=Kostenloses%20Erstgespr%C3%A4ch%20Web%20%26%20SEO">
+                  Kostenloses Erstgespräch
+                </a>
+              </div>
+            </div>
+
+
+            </div>
           </section>
 
-        <!-- ====================== PAKETE & PREISE – WEB & UX (auch vor Analytics) ====================== -->
-        <section class="section reveal">
-          <h2>Pakete & Preise – Web & UX</h2>
-          <div class="grid grid-3">
-            
+          <!-- ====================== ÜBER MICH ====================== -->
+          <section class="section">
+            <h2>Über mich</h2>
             <div class="card">
-              <h3>Starter</h3>
-              <p class="muted">Onepager oder kleine Portfolio-Seite</p>
-              <div class="price"><span class="num">€ 890</span><span>einmalig</span></div>
-              <ul class="muted" style="margin-left:18px">
-                <li> bis 3 Unterseiten</li>
-                <li> Responsive Design</li>
-                <li> Grund-SEO & Performance-Setup</li>
-              </ul>
-              <a class="btn"
-                href="mailto:marlongreta1@gmail.com?subject=Anfrage%20Web%20%26%20UX%20–%20Starter">
-                Anfragen
+              <p>Ich bin <strong>Marlon Greta</strong>, Wirtschaftsinformatiker mit Fokus auf <em>Software Engineeering, Data Analysis, Power BI</em> & Prozessautomatisierung. Ich verbinde Tech & Business, damit Entscheidungen auf Daten beruhen – schnell, pragmatisch, verständlich.</p>
+              <p class="muted">Tech-Stack: Web(HTML, CSS, JS), Frontend (Angular, Next, Vue), Backend (Java, Spring-Boot, Git), Data (Python, Power BI, SQL, Excel/VBA), SAP/ABAP.</p>
+              <div class="tech-stack">
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" aria-label="HTML5">
+                <img src="icons/html5.svg" alt="HTML5">
+              </a>
+
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" aria-label="CSS3">
+                <img src="icons/css.svg" alt="CSS3">
+              </a>
+
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" aria-label="JavaScript">
+                <img src="icons/javascript.svg" alt="JavaScript">
+              </a>
+
+              <a href="https://www.typescriptlang.org/" target="_blank" aria-label="TypeScript">
+                <img src="icons/typescript.svg" alt="TypeScript">
+              </a>
+
+              <a href="https://angular.io/" target="_blank" aria-label="Angular">
+                <img src="icons/angular.svg" alt="Angular">
+              </a>
+
+              <a href="https://vuejs.org/" target="_blank" aria-label="Vue.js">
+                <img src="icons/vuedotjs.svg" alt="Vue.js">
+              </a>
+
+              <a href="https://nextjs.org/" target="_blank" aria-label="Next.js">
+                <img src="icons/nextdotjs.svg" alt="Next.js">
+              </a>
+
+              <a href="https://nodejs.org/" target="_blank" aria-label="Node.js">
+                <img src="icons/nodedotjs.svg" alt="Node.js">
+              </a>
+
+              <a href="https://www.python.org/" target="_blank" aria-label="Python">
+                <img src="icons/python.svg" alt="Python">
+              </a>
+
+              <a href="https://spring.io/projects/spring-boot" target="_blank" aria-label="Spring Boot">
+                <img src="icons/springboot.svg" alt="Spring Boot">
+              </a>
+
+              <a href="https://www.postgresql.org/" target="_blank" aria-label="PostgreSQL">
+                <img src="icons/postgresql.svg" alt="PostgreSQL">
+              </a>
+
+              <a href="https://git-scm.com/" target="_blank" aria-label="Git">
+                <img src="icons/git.svg" alt="Git">
               </a>
             </div>
-            
+
+
+            </div>
+          </section>
+
+          <!-- ====================== KONTAKT ====================== -->
+          <section class="section reveal">
             <div class="card">
-              <h3>Business</h3>
-              <p class="muted">Individuelle Website mit CMS & UX-Fokus</p>
-              <div class="price"><span class="num">€ 2.490</span><span>einmalig</span></div>
-              <ul class="muted" style="margin-left:18px">
-                <li> bis 8 Unterseiten</li>
-                <li> Individuelles UI-Design (Figma oder direkt im Code)</li>
-                <li> CMS-Integration (z. B. Webflow, WordPress oder Headless)</li>
-                <li> SEO-Basics & Launch-Optimierung</li>
-              </ul>
-              <a class="btn"
-                href="mailto:marlongreta1@gmail.com?subject=Anfrage%20Web%20%26%20UX%20–%20Business">
-                Anfragen
-              </a>
+              <h2>Kontakt</h2>
+              <p class="muted">Schreib mir, was du messen oder automatisieren möchtest. Ich antworte innerhalb von 24 Stunden.</p>
+              <div style="display:flex;gap:12px;flex-wrap:wrap">
+                <a class="btn primary" href="mailto:marlongreta1@gmail.com">E-Mail</a>
+                <a class="btn primary" href="tel:06767022807">Anrufen</a>
+                <a class="btn" href="https://github.com/mrgreata" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn" href="https://linkedin.com/in/marlon-greta" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
             </div>
-            
-            <div class="card">
-              <h3>Care</h3>
-              <p class="muted">Laufende Betreuung, Updates & Optimierung</p>
-              <div class="price"><span class="num">€ 190</span><span>/Monat</span></div>
-              <ul class="muted" style="margin-left:18px">
-                <li> Regelmäßige Backups & Sicherheitsupdates</li>
-                <li> Inhaltspflege (Texte, Bilder, Blog etc.)</li>
-                <li> Kleine Design- oder UX-Verbesserungen</li>
-                <li> Priorisierter Support</li>
-              </ul>
-              <a class="btn"
-                href="mailto:marlongreta1@gmail.com?subject=Anfrage%20Web%20%26%20UX%20–%20Care">
-                Anfragen
-              </a>
-            </div>
+          </section>
 
-          </div>
-        </section>
+          <!-- ====================== FOOTER ====================== -->
+          <footer class="container footer">
+            © <span id="y"></span> Marlon Greta – Data Analysis & Automatisierung. Alle Rechte vorbehalten.
+          </footer>
+        </main>
 
-        <!-- ====================== ÜBER MICH ====================== -->
-        <section class="section">
-          <h2>Über mich</h2>
-          <div class="card">
-            <p>Ich bin <strong>Marlon Greta</strong>, Wirtschaftsinformatiker mit Fokus auf <em>Software Engineeering, Data Analysis, Power BI</em> & Prozessautomatisierung. Ich verbinde Tech & Business, damit Entscheidungen auf Daten beruhen – schnell, pragmatisch, verständlich.</p>
-            <p class="muted">Tech-Stack: Web(HTML, CSS, JS), Frontend (Angular, Next, Vue), Backend (Java, Spring-Boot, Git), Data (Python, Power BI, SQL, Excel/VBA), SAP/ABAP.</p>
-            <div class="stack">
-          </div>
-        </section>
+        <!-- JS: aktuelles Jahr im Footer -->
+        <script>
+          document.getElementById('y').textContent = new Date().getFullYear();
+        </script>
+        <script src="track.js"></script>
+        <script src="cursor.js"></script>
+        <script src="liquid.js"></script>
+        <script src="reveal.js"></script>
+        <script src="fade.js"></script>
+    </div>
 
-        <!-- ====================== KONTAKT ====================== -->
-        <section class="section reveal">
-          <div class="card">
-            <h2>Kontakt</h2>
-            <p class="muted">Schreib mir, was du messen oder automatisieren möchtest. Ich antworte innerhalb von 24 Stunden.</p>
-            <div style="display:flex;gap:12px;flex-wrap:wrap">
-              <a class="btn primary" href="mailto:marlongreta1@gmail.com">E-Mail</a>
-              <a class="btn primary" href="tel:06767022807">Anrufen</a>
-              <a class="btn" href="https://github.com/mrgreata" target="_blank" rel="noopener">GitHub</a>
-              <a class="btn" href="https://linkedin.com/in/marlon-greta" target="_blank" rel="noopener">LinkedIn</a>
-            </div>
-          </div>
-          <p class="muted" style="font-size:12px;margin-top:10px">* Zufriedenheitsgarantie: Wenn das vereinbarte Ergebnis nicht erreicht wird, fallen keine Kosten an.</p>
-        </section>
+    <!-- SVG Filter für Liquid Glass Effect -->
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="liquid-filter">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.012"
+        numOctaves="2"
+        seed="2"
+        result="noise"
+      />
+      <feDisplacementMap
+        in="SourceGraphic"
+        in2="noise"
+        scale="0"
+        xChannelSelector="R"
+        yChannelSelector="G"
+      />
+    </filter>
+  </svg>
+  <script>
+    (function () {
+      const lang = navigator.language || navigator.userLanguage;
+      const isEnglish = lang.startsWith('en');
 
-        <!-- ====================== FOOTER ====================== -->
-        <footer class="container footer">
-          © <span id="y"></span> Marlon Greta – Data Analysis & Automatisierung. Alle Rechte vorbehalten.
-        </footer>
-      </main>
+      // nur weiterleiten, wenn User nicht schon manuell gewählt hat
+      if (isEnglish && !localStorage.getItem('lang')) {
+        window.location.replace('/en/');
+      }
+    })();
+  </script>
 
-      <!-- JS: aktuelles Jahr im Footer -->
-      <script>
-        document.getElementById('y').textContent = new Date().getFullYear();
-      </script>
-      <script src="track.js"></script>
-      <script src="cursor.js"></script>
-      <script src="liquid.js"></script>
-      <script src="reveal.js"></script>
-      <script src="fade.js"></script>
-  </div>
-
-  <!-- SVG Filter für Liquid Glass Effect -->
-<svg width="0" height="0" style="position:absolute">
-  <filter id="liquid-filter">
-    <feTurbulence
-      type="fractalNoise"
-      baseFrequency="0.012"
-      numOctaves="2"
-      seed="2"
-      result="noise"
-    />
-    <feDisplacementMap
-      in="SourceGraphic"
-      in2="noise"
-      scale="0"
-      xChannelSelector="R"
-      yChannelSelector="G"
-    />
-  </filter>
-</svg>
-<script>
-  (function () {
-    const lang = navigator.language || navigator.userLanguage;
-    const isEnglish = lang.startsWith('en');
-
-    // nur weiterleiten, wenn User nicht schon manuell gewählt hat
-    if (isEnglish && !localStorage.getItem('lang')) {
-      window.location.replace('/en/');
-    }
-  })();
-</script>
-
-</body>
-</html>
+  </body>
+  </html>

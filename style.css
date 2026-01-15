@@ -472,3 +472,112 @@ body.is-loaded{
 .card.project:hover .thumb::after {
   opacity: 0.25;
 }
+
+.tech-stack {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.tech-stack a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  transition: transform .2s ease, background .2s ease;
+}
+
+.tech-stack a:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.08);
+}
+
+.tech-stack img {
+  width: 22px;
+  height: 22px;
+  opacity: .9;
+  filter: invert(1);
+}
+
+.card .tech-stack {
+  justify-content: center;
+}
+
+/* =====================
+   Pricing Cards Hover
+   ===================== */
+
+/* Optional: Karten in dieser Section sollen "hoverbar" sein */
+.pricing .card{
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+  will-change: transform;
+}
+
+/* Hover Effekt: leicht anheben + "silber" Schimmer */
+.pricing .card:hover{
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(255,255,255,0.22);
+
+  /* leicht silberne Oberfläche */
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03)),
+    radial-gradient(90% 70% at 25% 0%, rgba(255,255,255,0.10), transparent 60%),
+    radial-gradient(90% 70% at 100% 100%, rgba(255,255,255,0.06), transparent 55%);
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.45),
+    0 0 0 1px rgba(255,255,255,0.05) inset;
+}
+
+/* (Optional) kleiner Glow nur bei Pricing */
+.pricing .card:hover .price .num{
+  text-shadow: 0 0 14px rgba(255,255,255,0.18);
+}
+
+/* Mobile: kein "Hover-Lift" wenn Touch */
+@media (hover: none){
+  .pricing .card:hover{
+    transform: none;
+  }
+}
+
+/* ===== Pricing: 4 cards in one row on desktop ===== */
+.grid-4{
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Auf kleineren Screens wieder 2/1 Spalten */
+@media (max-width: 1100px){
+  .grid-4{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px){
+  .grid-4{ grid-template-columns: 1fr; }
+}
+
+/* Custom card (4. Karte) als kompakte Card darstellen */
+.pricing .pricing-custom{
+  display:flex;
+  flex-direction:column;      /* statt 2-spaltig */
+  gap:10px;
+}
+
+.pricing .pricing-custom-cta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  min-width: 0;               /* wichtig für Grid */
+}
+
+/* damit in der Custom-Card die Buttons unten sitzen */
+.pricing .pricing-custom{
+  height: 100%;
+}
+.pricing .pricing-custom-cta{
+  margin-top: auto;
+}
