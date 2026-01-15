@@ -1,6 +1,6 @@
 (() => {
   // === ENDPOINT des Workers ===
-  const ENDPOINT = "https://portfolio-tracker.marlongreta1.workers.dev";
+  const ENDPOINT = "https://collect.marlongreta1.workers.dev";
   const SITE_ID = "portfolio-v1";
 
   // Cookielose IDs (nur im Browser, nicht serverseitig)
