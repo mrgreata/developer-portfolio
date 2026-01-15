@@ -1,4 +1,13 @@
 (() => {
+  const isTouch =
+    window.matchMedia("(hover: none), (pointer: coarse)").matches ||
+    navigator.maxTouchPoints > 0;
+
+  if (isTouch) {
+    const ring = document.getElementById("cursor-ring");
+    if (ring) ring.style.display = "none";
+    return;
+  }
   const ring = document.getElementById('cursor-ring');
   const intro = document.getElementById('intro');
   if (!ring || !intro) return;

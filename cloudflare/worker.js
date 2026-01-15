@@ -1,22 +1,26 @@
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
 export default {
-  async fetch(req, env, ctx) {
-
+  async fetch(req, env) {
+    // 1) Preflight
     if (req.method === "OPTIONS") {
-      return new Response(null, {
-        status: 204,
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "POST, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type",
-        }
-      });
+      return new Response(null, { status: 204, headers: corsHeaders });
     }
-    
-    if (req.method !== "POST") return new Response("ok", { status: 200 });
 
-    const cf = req.cf || {};
+    // 2) Health check
+    if (req.method !== "POST") {
+      return new Response("ok", { status: 200, headers: corsHeaders });
+    }
+
+    // 3) Parse body
     let body = {};
     try { body = await req.json(); } catch {}
+
+    const cf = req.cf || {};
 
     const record = {
       site_id: body.siteId,
@@ -36,20 +40,30 @@ export default {
       event_label: body.eventLabel || null,
       event_section: body.eventSection || null,
       event_context: body.eventContext || null,
-      is_outbound: body.isOutbound ?? null
+      is_outbound: body.isOutbound ?? null,
     };
 
-    await fetch(env.SUPABASE_URL + "/rest/v1/visits", {
+    // 4) Store in Supabase (and always return CORS headers)
+    const resp = await fetch(env.SUPABASE_URL + "/rest/v1/visits", {
       method: "POST",
       headers: {
         "apikey": env.SUPABASE_KEY,
         "Authorization": "Bearer " + env.SUPABASE_KEY,
         "Content-Type": "application/json",
-        "Prefer": "return=minimal"
+        "Prefer": "return=minimal",
       },
-      body: JSON.stringify(record)
+      body: JSON.stringify(record),
     });
 
-    return new Response("stored", { status: 200, headers: { "Access-Control-Allow-Origin": "*" } });
-  }
+    if (!resp.ok) {
+      // helpful debug (still with CORS)
+      const errText = await resp.text();
+      return new Response("supabase_error: " + errText, {
+        status: 500,
+        headers: corsHeaders,
+      });
+    }
+
+    return new Response("stored", { status: 200, headers: corsHeaders });
+  },
 };
