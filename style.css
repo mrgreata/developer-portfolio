@@ -601,14 +601,14 @@ body.is-loaded{
 }
 
 .about-text{
-  flex:2;
+  flex:1;
   min-width:240px;
 }
 
 .about-photo{
-  flex:1;
+  flex:0 0 auto;
   display:flex;
-  justify-content:center;
+  justify-content:flex-end;
 }
 
 .about-photo img{
@@ -620,14 +620,15 @@ body.is-loaded{
   box-shadow:var(--shadow);
 }
 
-/* Mobile: Bild unter dem Text, links ausgerichtet */
+/* Mobile: untereinander, Bild oben */
 @media (max-width:700px){
   .about-content{
-    flex-direction:column-reverse;
+    flex-direction:column;
     align-items:flex-start;
   }
-  
+
   .about-photo{
     justify-content:flex-start;
+    margin-bottom:12px;
   }
 }
