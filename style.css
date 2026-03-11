@@ -445,28 +445,29 @@ html {
 }
 
 
-/* Fullscreen Black Fade-In Overlay */
+/* 
 #page-fade{
   position: fixed;
   inset: 0;
-  background: #000;
-  z-index: 100000;           /* über allem */
+  background: #0b0f14;
+  z-index: 100000;
   opacity: 1;
   pointer-events: none;
-  transition: opacity 900ms ease; /* "auflösen" */
+  transition: opacity 250ms ease;
 }
 
-/* wenn die Seite bereit ist -> ausblenden */
+
 body.is-loaded #page-fade{
   opacity: 0;
 }
 
 body:not(.is-loaded){
-  overflow: hidden; /* verhindert Scroll während Fade */
+  overflow: hidden;
 }
 body.is-loaded{
   overflow: auto;
 }
+  */
 
 .tech-icons{
   display:flex;
@@ -759,32 +760,3 @@ html, body {
   filter: invert(79%) sepia(31%) saturate(576%) hue-rotate(111deg) brightness(98%) contrast(93%);
 }
 
-.hero-card {
-  max-width: 820px;
-}
-
-.hero-copy {
-  max-width: 680px;
-  margin-top: 10px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 18px;
-}
-
-.hero-benefits {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  margin-top: 18px;
-  font-size: 14px;
-}
-
-.hero-benefits span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
