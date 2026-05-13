@@ -28,3 +28,19 @@ Everything runs without Google Analytics or external tracking providers — priv
   Supabase (PostgreSQL database)
      ↓
   Grafana Dashboard (data visualization)
+```
+
+## Contact Form Backend
+
+The portfolio contact form posts JSON to the existing Cloudflare Worker at `/contact`.
+Configure these Worker environment variables before deploying:
+
+- `RESEND_API_KEY`: API key for sending email through Resend.
+- `CONTACT_TO_EMAIL`: destination inbox, for example `marlongreta1@gmail.com`.
+- `CONTACT_FROM_EMAIL`: verified sender, for example `Portfolio <contact@marlongreta.at>`.
+- `TURNSTILE_SECRET_KEY`: optional but recommended Cloudflare Turnstile secret for spam protection.
+
+If `TURNSTILE_SECRET_KEY` is set, add the matching public site key to the form as
+`data-turnstile-sitekey="your-public-site-key"`. The frontend will render the
+Turnstile widget automatically. Keep all secret values in Cloudflare Worker settings,
+never in the frontend.

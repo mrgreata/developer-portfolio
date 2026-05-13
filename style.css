@@ -127,6 +127,20 @@ h2{font-size:28px;margin:0 0 10px}
 .project h3{margin:6px 0 2px;font-size:18px}
 .project p{margin:0;color:#a7b5c6}
 
+.project-carousel{
+  grid-template-columns:none;
+  grid-auto-flow:column;
+  grid-auto-columns:calc((100% - 36px) / 3);
+  overflow-x:auto;
+  overscroll-behavior-inline:contain;
+  scroll-snap-type:x mandatory;
+  scroll-padding-inline:2px;
+  padding-bottom:12px;
+}
+.project-carousel > .project{
+  scroll-snap-align:start;
+}
+
 .service-card p{margin-bottom:18px}
 .text-link{
   color:var(--brand);
@@ -204,12 +218,30 @@ h2{font-size:28px;margin:0 0 10px}
   justify-self:start;
   cursor:pointer;
 }
+.form-hp{
+  position:absolute;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  opacity:0;
+  pointer-events:none;
+}
+.form-status{
+  min-height:22px;
+  margin:0;
+}
+.form-status.success{color:#6ee7b7}
+.form-status.error{color:#fca5a5}
 
 /* ===================== Responsive ===================== */
 @media (max-width: 900px){
   .hero{grid-template-columns:1fr}
   .grid-3{grid-template-columns:1fr}
   .grid-2{grid-template-columns:1fr}
+  .project-carousel{
+    grid-template-columns:none;
+    grid-auto-columns:calc((100% - 18px) / 2);
+  }
 
   .nav{
     flex-direction: column;
@@ -241,6 +273,12 @@ h2{font-size:28px;margin:0 0 10px}
   .contact-form button{
     width:100%;
     justify-content:center;
+  }
+}
+
+@media (max-width: 620px){
+  .project-carousel{
+    grid-auto-columns:100%;
   }
 }
 
