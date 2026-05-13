@@ -185,6 +185,8 @@ async function handleContact(req, env) {
   });
 
   if (!emailResponse.ok) {
+    const errorText = await emailResponse.text();
+    console.error("Resend email failed", emailResponse.status, errorText);
     return jsonResponse(req, { ok: false, error: "email_failed" }, 502);
   }
 
