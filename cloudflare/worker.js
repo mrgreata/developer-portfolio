@@ -113,9 +113,20 @@ async function sendTrackingToGoogleSheets(env, row) {
     body: JSON.stringify({ row }),
   });
 
+  const text = await response.text();
+
   if (!response.ok) {
-    const text = await response.text();
     console.error("Google Sheets tracking failed", response.status, text);
+    return;
+  }
+
+  try {
+    const result = JSON.parse(text || "{}");
+    if (result.ok === false) {
+      console.error("Google Sheets tracking rejected", text);
+    }
+  } catch {
+    console.error("Google Sheets tracking returned non-JSON response", text.slice(0, 300));
   }
 }
 

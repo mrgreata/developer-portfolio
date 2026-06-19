@@ -1,4 +1,5 @@
 const SHEET_NAME = "tracking";
+const SPREADSHEET_ID_PROPERTY = "TRACKING_SPREADSHEET_ID";
 const HEADERS = [
   "timestamp",
   "site_id",
@@ -23,6 +24,12 @@ const HEADERS = [
   "metadata",
 ];
 
+function doGet() {
+  return ContentService
+    .createTextOutput(JSON.stringify({ ok: true, service: "portfolio-tracking" }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
 function doPost(e) {
   try {
     const body = JSON.parse(e.postData.contents || "{}");
@@ -42,7 +49,7 @@ function doPost(e) {
 }
 
 function getTrackingSheet_() {
-  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const spreadsheet = getSpreadsheet_();
   let sheet = spreadsheet.getSheetByName(SHEET_NAME);
 
   if (!sheet) {
@@ -58,4 +65,24 @@ function getTrackingSheet_() {
   }
 
   return sheet;
+}
+
+function getSpreadsheet_() {
+  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  if (activeSpreadsheet) {
+    return activeSpreadsheet;
+  }
+
+  const spreadsheetId = PropertiesService
+    .getScriptProperties()
+    .getProperty(SPREADSHEET_ID_PROPERTY);
+
+  if (!spreadsheetId) {
+    throw new Error(
+      `Missing script property ${SPREADSHEET_ID_PROPERTY}. ` +
+      "Create the script from the Google Sheet or set this property to the Sheet ID."
+    );
+  }
+
+  return SpreadsheetApp.openById(spreadsheetId);
 }

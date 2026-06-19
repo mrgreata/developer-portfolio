@@ -71,3 +71,8 @@ npx wrangler deploy cloudflare/worker.js --name collect
 ```
 
 The tracking sheet will be created automatically with the expected header row.
+
+If the Apps Script was not created from inside the Sheet, set this script property
+in Apps Script settings:
+
+- `TRACKING_SPREADSHEET_ID`: the ID from the Google Sheet URL.
