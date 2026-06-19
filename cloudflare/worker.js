@@ -53,6 +53,72 @@ function escapeHtml(value) {
   })[char]);
 }
 
+function safeJson(value) {
+  try {
+    return JSON.stringify(value ?? {});
+  } catch {
+    return "{}";
+  }
+}
+
+function getTrackingSheetUrl(env) {
+  return env.GOOGLE_SHEETS_TRACKING_URL || env.PUBLIC_GOOGLE_SHEETS_TRACKING_URL || "";
+}
+
+function getTrackingSheetRow(record, body, req) {
+  const userAgent = req.headers.get("User-Agent") || "";
+  return {
+    timestamp: new Date().toISOString(),
+    site_id: record.site_id || "",
+    domain: (() => {
+      try {
+        return new URL(record.url || "").hostname;
+      } catch {
+        return "";
+      }
+    })(),
+    event_type: record.kind || "",
+    path: record.path || "",
+    url: record.url || "",
+    referrer: record.referrer || "",
+    visitor_id: record.vid || "",
+    session_id: record.sid || "",
+    country: record.country || "",
+    region: record.region || "",
+    city: record.city || "",
+    language: record.lang || "",
+    user_agent: userAgent,
+    time_on_page_sec: record.time_on_page_sec ?? "",
+    max_scroll: record.max_scroll ?? "",
+    event_label: record.event_label || "",
+    event_section: record.event_section || "",
+    event_context: record.event_context || "",
+    is_outbound: record.is_outbound ?? "",
+    metadata: safeJson({
+      client_ts: record.client_ts,
+      viewport: body.viewport || "",
+    }),
+  };
+}
+
+async function sendTrackingToGoogleSheets(env, row) {
+  const url = getTrackingSheetUrl(env);
+  if (!url) return;
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify({ row }),
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    console.error("Google Sheets tracking failed", response.status, text);
+  }
+}
+
 async function readJson(req) {
   const contentType = req.headers.get("Content-Type") || "";
   if (!contentType.includes("application/json")) {
@@ -200,7 +266,7 @@ const trackingCorsHeaders = {
 };
 
 export default {
-  async fetch(req, env) {
+  async fetch(req, env, ctx) {
     const url = new URL(req.url);
 
     if (url.pathname === "/contact") {
@@ -264,6 +330,9 @@ export default {
       const err = await supaResp.text();
       return new Response("supabase_error: " + err, { status: 500, headers: trackingCorsHeaders });
     }
+
+    const sheetRow = getTrackingSheetRow(record, body, req);
+    ctx.waitUntil(sendTrackingToGoogleSheets(env, sheetRow));
 
     return new Response("stored", { status: 200, headers: trackingCorsHeaders });
   }

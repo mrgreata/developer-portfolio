@@ -44,3 +44,30 @@ If `TURNSTILE_SECRET_KEY` is set, add the matching public site key to the form a
 `data-turnstile-sitekey="your-public-site-key"`. The frontend will render the
 Turnstile widget automatically. Keep all secret values in Cloudflare Worker settings,
 never in the frontend.
+
+## Google Sheets Tracking
+
+The Worker can mirror every tracking event into Google Sheets after the existing
+Supabase insert succeeds.
+
+Setup:
+
+1. Create a Google Sheet.
+2. Open Extensions -> Apps Script.
+3. Paste the contents of `google-sheets-tracking.gs`.
+4. Deploy it as a Web app.
+5. Set access to "Anyone" so the Worker can post events.
+6. Copy the `/exec` Web app URL.
+7. Store it as a Worker secret:
+
+```bash
+npx wrangler secret put GOOGLE_SHEETS_TRACKING_URL --name collect
+```
+
+Then deploy the Worker:
+
+```bash
+npx wrangler deploy cloudflare/worker.js --name collect
+```
+
+The tracking sheet will be created automatically with the expected header row.
