@@ -315,24 +315,36 @@ export default {
       is_outbound: body.isOutbound ?? null,
     };
 
-    const supaResp = await fetch(env.SUPABASE_URL + "/rest/v1/visits", {
-      method: "POST",
-      headers: {
-        "apikey": env.SUPABASE_KEY,
-        "Authorization": "Bearer " + env.SUPABASE_KEY,
-        "Content-Type": "application/json",
-        "Prefer": "return=minimal",
-      },
-      body: JSON.stringify(record),
-    });
+    if (env.SUPABASE_URL && env.SUPABASE_KEY) {
+      try {
+        const supaResp = await fetch(env.SUPABASE_URL + "/rest/v1/visits", {
+          method: "POST",
+          headers: {
+            "apikey": env.SUPABASE_KEY,
+            "Authorization": "Bearer " + env.SUPABASE_KEY,
+            "Content-Type": "application/json",
+            "Prefer": "return=minimal",
+          },
+          body: JSON.stringify(record),
+        });
 
-    if (!supaResp.ok) {
-      const err = await supaResp.text();
-      return new Response("supabase_error: " + err, { status: 500, headers: trackingCorsHeaders });
+        if (!supaResp.ok) {
+          const err = await supaResp.text();
+          console.error("Supabase tracking failed", supaResp.status, err);
+        }
+      } catch (error) {
+        console.error("Supabase tracking crashed", String(error));
+      }
+    } else {
+      console.warn("Supabase tracking skipped: missing SUPABASE_URL or SUPABASE_KEY");
     }
 
     const sheetRow = getTrackingSheetRow(record, body, req);
-    ctx.waitUntil(sendTrackingToGoogleSheets(env, sheetRow));
+    if (ctx?.waitUntil) {
+      ctx.waitUntil(sendTrackingToGoogleSheets(env, sheetRow));
+    } else {
+      await sendTrackingToGoogleSheets(env, sheetRow);
+    }
 
     return new Response("stored", { status: 200, headers: trackingCorsHeaders });
   }
