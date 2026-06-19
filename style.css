@@ -681,45 +681,7 @@ body.is-loaded{
   justify-content: center;
 }
 
-/* =====================
-   Pricing Cards Hover
-   ===================== */
-
-/* Optional: Karten in dieser Section sollen "hoverbar" sein */
-.pricing .card{
-  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
-  will-change: transform;
-}
-
-/* Hover Effekt: leicht anheben + "silber" Schimmer */
-.pricing .card:hover{
-  transform: translateY(-6px) scale(1.01);
-  border-color: rgba(255,255,255,0.22);
-
-  /* leicht silberne Oberfläche */
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03)),
-    radial-gradient(90% 70% at 25% 0%, rgba(255,255,255,0.10), transparent 60%),
-    radial-gradient(90% 70% at 100% 100%, rgba(255,255,255,0.06), transparent 55%);
-
-  box-shadow:
-    0 18px 45px rgba(0,0,0,.45),
-    0 0 0 1px rgba(255,255,255,0.05) inset;
-}
-
-/* (Optional) kleiner Glow nur bei Pricing */
-.pricing .card:hover .price .num{
-  text-shadow: 0 0 14px rgba(255,255,255,0.18);
-}
-
-/* Mobile: kein "Hover-Lift" wenn Touch */
-@media (hover: none){
-  .pricing .card:hover{
-    transform: none;
-  }
-}
-
-/* ===== Pricing: 4 cards in one row on desktop ===== */
+/* ===== 4-card grid used by process sections ===== */
 .grid-4{
   grid-template-columns: repeat(4, 1fr);
 }
@@ -730,29 +692,6 @@ body.is-loaded{
 }
 @media (max-width: 700px){
   .grid-4{ grid-template-columns: 1fr; }
-}
-
-/* Custom card (4. Karte) als kompakte Card darstellen */
-.pricing .pricing-custom{
-  display:flex;
-  flex-direction:column;      /* statt 2-spaltig */
-  gap:10px;
-}
-
-.pricing .pricing-custom-cta{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  justify-content:flex-start;
-  min-width: 0;               /* wichtig für Grid */
-}
-
-/* damit in der Custom-Card die Buttons unten sitzen */
-.pricing .pricing-custom{
-  height: 100%;
-}
-.pricing .pricing-custom-cta{
-  margin-top: auto;
 }
 
 /* ===================== Über mich – Layout mit Profilbild ===================== */
