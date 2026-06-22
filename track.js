@@ -3,9 +3,23 @@
   const ENDPOINT = "https://collect.marlongreta1.workers.dev";
   const SITE_ID = "portfolio-v1";
 
+  const makeId = () => crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+  function getStoredId(storage, key) {
+    try {
+      const existing = storage.getItem(key);
+      if (existing) return existing;
+      const next = makeId();
+      storage.setItem(key, next);
+      return next;
+    } catch {
+      return makeId();
+    }
+  }
+
   // Cookielose IDs (nur im Browser, nicht serverseitig)
-  const sid = sessionStorage.sid || (sessionStorage.sid = (crypto.randomUUID?.() ?? Date.now()+"-"+Math.random()));
-  const vid = localStorage.vid  || (localStorage.vid  = (crypto.randomUUID?.() ?? Date.now()+"-"+Math.random()));
+  const sid = getStoredId(sessionStorage, "portfolio_sid");
+  const vid = getStoredId(localStorage, "portfolio_vid");
 
   // Metriken
   let maxScroll = 0, timeMs = 0, last = performance.now();
@@ -24,30 +38,51 @@
   const loop = () => { if (!document.hidden) timeMs += performance.now() - last; last = performance.now(); requestAnimationFrame(loop); };
   requestAnimationFrame(loop);
 
-  // Sende-Funktion (sendBeacon bevorzugt)
-  function send(kind="pageview", extra={}) {
-  const payload = {
-    siteId: SITE_ID, kind,
-    url: location.href, path: location.pathname,
-    referrer: document.referrer || null, lang: navigator.language || null,
-    timeOnPageSec: Math.round(timeMs/1000), maxScroll,
-    sid, vid, ts: new Date().toISOString(),
-    ...extra
-  };
+  function buildPayload(kind = "pageview", extra = {}) {
+    return {
+      siteId: SITE_ID,
+      kind,
+      url: location.href,
+      path: location.pathname,
+      referrer: document.referrer || null,
+      lang: navigator.language || null,
+      timeOnPageSec: Math.round(timeMs / 1000),
+      maxScroll,
+      sid,
+      vid,
+      ts: new Date().toISOString(),
+      viewport: `${innerWidth}x${innerHeight}`,
+      ...extra,
+    };
+  }
 
-  // IMPORTANT: text/plain -> no preflight
-  const body = JSON.stringify(payload);
+  function sendWithBeacon(body) {
+    try {
+      return Boolean(navigator.sendBeacon?.(ENDPOINT, new Blob([body], { type: "text/plain" })));
+    } catch {
+      return false;
+    }
+  }
 
-  if (!navigator.sendBeacon || !navigator.sendBeacon(ENDPOINT, new Blob([body], { type: "text/plain" }))) {
+  // Sende-Funktion: fetch ist in Brave zuverlässiger; Beacon bleibt Fallback für Tab-Ende.
+  function send(kind = "pageview", extra = {}, options = {}) {
+    const body = JSON.stringify(buildPayload(kind, extra));
+
+    if (options.preferBeacon && sendWithBeacon(body)) {
+      return;
+    }
+
     fetch(ENDPOINT, {
       method: "POST",
+      mode: "cors",
+      credentials: "omit",
+      keepalive: true,
       headers: { "Content-Type": "text/plain" },
-      body
-    }).catch(()=>{});
+      body,
+    }).catch(() => {
+      sendWithBeacon(body);
+    });
   }
-}
-
-
 
   // Pageview und Abschluss
   addEventListener("load", () => send("pageview"));
@@ -55,7 +90,7 @@
   const sendFinalOnce = () => {
     if (sentFinal) return;
     sentFinal = true;
-    send("final");
+    send("final", {}, { preferBeacon: true });
   };
 
 addEventListener("visibilitychange", () => {
