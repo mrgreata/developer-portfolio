@@ -320,6 +320,63 @@ a.live-company:hover{
 }
 .text-link:hover{color:var(--brand-2)}
 
+.feature-band{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:22px;
+  align-items:center;
+  background:
+    radial-gradient(80% 120% at 100% 0%,rgba(34,211,238,.12),transparent),
+    linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));
+}
+
+.feature-band h2{
+  margin-top:10px;
+}
+
+.feature-band p{
+  max-width:720px;
+  margin:0;
+}
+
+.feature-band--stacked{
+  grid-template-columns:1fr;
+}
+
+.municipal-page .hero{
+  min-height:430px;
+}
+
+.municipal-hero h1{
+  max-width:900px;
+}
+
+.municipal-checks{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.municipal-checks span{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:8px 12px;
+  border:1px solid #273448;
+  border-radius:999px;
+  color:#c8d5e4;
+  background:#0f1520;
+  font-size:14px;
+  font-weight:700;
+}
+
+.municipal-contact-actions{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
 .service{display:flex;gap:12px}
 .service .icon{
   width:42px;height:42px;border-radius:8px;background:#0f1624;
@@ -441,11 +498,18 @@ a.live-company:hover{
   }
 
   .contact-card,
-  .form-row{
+  .form-row,
+  .feature-band{
     grid-template-columns:1fr;
   }
 
   .contact-form button{
+    width:100%;
+    justify-content:center;
+  }
+
+  .feature-band > .btn,
+  .municipal-contact-actions .btn{
     width:100%;
     justify-content:center;
   }
@@ -616,6 +680,18 @@ html {
   opacity: 0;
   transition: opacity .2s ease;
   transform: translate(-9999px, -9999px);
+}
+
+#cursor-ring::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: gray;
+  transform: translate(-50%, -50%);
 }
 
 .intro-active #cursor-ring {
