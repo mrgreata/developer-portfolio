@@ -20,14 +20,12 @@
   <link rel="canonical" href="https://mrgreata.github.io/developer-portfolio/en/" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Nunito+Sans:wght@400;600;700;800&amp;family=Poppins:wght@600&amp;display=swap" rel="stylesheet">
 
   <!-- External CSS -->
   <link rel="icon" href="../icons/favicon.svg" type="image/svg+xml" />
   <link rel="alternate icon" href="../icons/faviconweb.png" type="image/png" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="preload" href="../fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=20260910g" />
 
   <!-- Structured Data (SEO) -->
   <script type="application/ld+json">
@@ -55,195 +53,28 @@
   </script>
 </head>
 
-<body>
-  <div id="page-fade"></div>
-  <div id="cursor-ring"></div>
+<body><a class="skip-link" href="#main-content">Skip to content</a>
+
+
 
   <!-- ====================== FULLSCREEN INTRO ====================== -->
-  <section class="intro" id="intro">
-    <video class="intro-bg" autoplay muted loop playsinline>
-      <source src="../media/intro.webm" type="video/webm">
-      <source src="../media/intro.mp4" type="video/mp4">
-    </video>
 
-    <div class="intro-brand">Marlon Greta</div>
-    <div class="intro-inner container">
-	      <p class="intro-title">
-	        <span class="muted">Websites &amp; IT solutions that create inquiries.</span>
-	      </p>
-	      <p>Professional websites, landing pages and IT projects for businesses that want to sell and work better online.</p>
-
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
-	        <a class="btn primary" href="#contact">Request a project</a>
-	        <a class="btn btn-glass-liquid" href="#web">View services</a>
-      </div>
-    </div>
-  </section>
 
   <!-- ====================== HEADER / NAV ====================== -->
   <div id="page">
-    <header class="container nav">
-      <div class="brand">
-        <span class="badge">Available for projects</span>
-        <span style="opacity:.6">•</span>
-        <span class="muted">Reply within 24h</span>
-      </div>
-
-      <nav>
-	        <a class="btn" href="#web" aria-label="Go to Web & UX">Services</a>
-	        <a class="btn primary" href="#contact" aria-label="Go to contact form">Request a project</a>
+    <header class="container nav"><a class="wordmark" href="../" aria-label="Marlon Greta – Home">marlon greta<span aria-hidden="true">.</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">+</span></button><nav id="main-nav" aria-label="Main navigation">
+          <a class="btn" href="#web" aria-label="Go to Web & UX">Services</a>
+          <a class="btn primary" href="#contact" aria-label="Go to contact form">Request a project</a>
         <a class="btn" href="../" onclick="localStorage.setItem('lang','de')">DE</a>
-      </nav>
-    </header>
+      </nav></header>
 
     <!-- ====================== MAIN CONTENT ====================== -->
-    <main class="container">
+    <main class="container" id="main-content">
 
       <!-- ====================== HERO ====================== -->
-      <section class="hero reveal">
-        <div class="hero-content">
-          <span class="hero-eyebrow">Web design &amp; development from Vienna</span>
-          <h1>Websites for businesses.</h1>
-          <p>Clear design. Fast performance. Clean implementation.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#contact">Request a project</a>
-            <a class="btn" href="#web">View projects</a>
-          </div>
-        </div>
-      </section>
-
-	      <!-- ====================== WEB & UX ====================== -->
-	      <section id="web" class="section reveal">
-	        <h2>Services & project examples</h2>
-
-	        <p class="muted section-intro">
-	          Websites for businesses, lead-generation landing pages, custom web applications, IT automation and technical support. The projects below show the kind of frontend and web work I build.
-	        </p>
-
-        <div class="grid grid-3 project-carousel reveal reveal-stagger">
-
-          <!-- Web Project 1 -->
-          <article class="card project">
-            <div class="thumb" aria-hidden="true"
-              style="background:
-                radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
-                radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
-                url('../images/carpriceai.png') center/cover no-repeat, #0e1522;">
-            </div>
-
-            <div>
-              <span class="tag">AI</span>
-              <span class="tag">Web App</span>
-            </div>
-
-            <h3>CarPrice AI</h3>
-            <p>Price-check platform for car dealers that compares vehicle prices with market data from Austria and Germany and returns a clear recommendation instantly.</p>
-
-            <ul class="muted" style="margin:0 0 4px 18px">
-              <li>Fast analysis from a simple vehicle input</li>
-              <li>Market median and pricing recommendation as an actionable result</li>
-              <li>Landing page, login flow and dashboard direction for dealers</li>
-            </ul>
-
-            <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn" href="https://www.carpriceai.de/" target="_blank" rel="noopener">View live</a>
-              <a class="btn" href="https://github.com/mrgreata/carpriceAI.com" target="_blank" rel="noopener">View code</a>
-            </div>
-          </article>
-
-          <!-- Web Project 1 -->
-          <article class="card project">
-            <div class="thumb" aria-hidden="true"
-              style="background:
-                radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
-                radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
-                url('../images/gedichte.png') center/cover no-repeat, #0e1522;">
-            </div>
-
-            <div>
-              <span class="tag">HTML/CSS</span>
-              <span class="tag">Performance</span>
-            </div>
-
-            <h3>Content website with articles</h3>
-            <p>Static website with clear navigation, articles and an interactive quiz. Useful for content-heavy projects that need fast orientation.</p>
-
-            <ul class="muted" style="margin:0 0 4px 18px">
-              <li>Structured content areas and navigation</li>
-              <li>Lean frontend without unnecessary dependencies</li>
-              <li>Interactive quiz logic as an additional feature</li>
-            </ul>
-
-            <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn" href="https://dergutefreund.at/" target="_blank" rel="noopener">View live</a>
-              <a class="btn" href="https://github.com/mrgreata/dergutefreund" target="_blank" rel="noopener">View code</a>
-            </div>
-          </article>
-
-          <!-- Web Project 2 -->
-          <article class="card project">
-            <div class="thumb" aria-hidden="true"
-              style="background:
-                radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
-                radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
-                url('../images/medics.png') center/cover no-repeat, #0e1522;">
-            </div>
-
-            <div>
-              <span class="tag">Vanilla JS</span>
-              <span class="tag">SEO</span>
-            </div>
-
-            <h3>Clinic website</h3>
-            <p>Responsive multi-page site with calm information architecture, readable content and simple contact paths.</p>
-
-            <ul class="muted" style="margin:0 0 4px 18px">
-              <li>Professional web presence for local services</li>
-              <li>Mobile-first structure for fast orientation</li>
-              <li>SEO basics and clear service pages</li>
-            </ul>
-
-            <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn" href="https://mrgreata.github.io/medical-clinic-website/" target="_blank" rel="noopener">View live</a>
-              <a class="btn" href="https://github.com/mrgreata/Web-Medics" target="_blank" rel="noopener">View code</a>
-            </div>
-          </article>
-
-          <!-- Web Project 3 -->
-          <article class="card project">
-            <div class="thumb" aria-hidden="true"
-              style="background:
-                radial-gradient(80% 100% at 20% 0%, rgba(34,211,238,.22), transparent),
-                radial-gradient(80% 100% at 120% 100%, rgba(110,231,183,.18), transparent),
-                url('../images/artmart.png') center/cover no-repeat, #0e1522;">
-            </div>
-
-            <div>
-              <span class="tag">API</span>
-              <span class="tag">Web App</span>
-            </div>
-
-            <h3>Artmart web application</h3>
-            <p>Client-side web application with product overview, configuration and cart. Example for dynamic interfaces and API-based frontend logic.</p>
-
-            <ul class="muted" style="margin:0 0 4px 18px">
-              <li>Dynamic product presentation and configuration</li>
-              <li>Modular single-page structure</li>
-              <li>Cart and UI logic in the frontend</li>
-            </ul>
-
-            <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn" href="https://mrgreata.github.io/artmart-frontend/" target="_blank" rel="noopener">View live</a>
-              <a class="btn" href="https://github.com/mrgreata/artmart-frontend" target="_blank" rel="noopener">View code</a>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ====================== LIVE COMPANIES ====================== -->
-      <section id="references" class="section live-companies reveal" aria-labelledby="live-companies-title">
-        <h2 id="live-companies-title" class="sr-only">Companies and brands live on the web</h2>
+      <section class="hero" id="intro"><div class="hero-topline"><span>WEB DESIGN &amp; DEVELOPMENT</span><span>VIENNA, AUSTRIA</span></div><div class="hero-layout"><div class="hero-content"><h1>Websites that<br>make work<br><em>simpler.</em></h1><p>Professional websites, landing pages and digital solutions for businesses and organisations.</p><div class="hero-actions"><a class="btn primary" data-track="cta" data-section="hero" data-label="project_inquiry" href="#contact">Let’s talk<span aria-hidden="true">↗</span></a><a class="text-link" href="#web">Explore projects <span aria-hidden="true">↓</span></a></div></div><div class="hero-art"><div class="phosphor" data-phosphor><div class="phosphor-fallback" aria-hidden="true"></div><canvas aria-hidden="true"></canvas></div></div></div></section>
+<section id="references" class="section live-companies reveal" aria-labelledby="live-companies-title">
+        <h2 id="live-companies-title">Clients & projects. Live on the web.</h2>
         <div class="live-companies-row">
           <div class="live-companies-track">
             <div class="live-company-group">
@@ -255,64 +86,169 @@
               <a class="live-company live-company--kebappreis" href="https://kebappreis.at/" target="_blank" rel="noopener" aria-label="View KebapPreis live"><span class="live-company-logo"><img src="../images/brand-kebappreis.png" alt="" aria-hidden="true"></span><span class="live-company-name">kebappreis.at</span></a>
               <a class="live-company live-company--dergutefreund" href="https://dergutefreund.at/" target="_blank" rel="noopener" aria-label="View Der Gute Freund live"><span class="live-company-logo"><img src="../images/brand-dergutefreund-transparent.png" alt="" aria-hidden="true"></span><span class="live-company-name">dergutefreund.at</span></a>
             </div>
-            <div class="live-company-group" aria-hidden="true">
-              <a class="live-company live-company--carprice" href="https://www.carpriceai.de/" target="_blank" rel="noopener" tabindex="-1"><span class="live-company-logo"><img src="../images/brand-carpriceai.png" alt=""></span><span class="live-company-name">CarPriceAI.de</span></a>
-              <a class="live-company live-company--fontwise" href="https://fontwise.de/" target="_blank" rel="noopener" tabindex="-1"><span class="live-company-logo"><img src="../images/brand-fontwise.png" alt=""></span><span class="live-company-name">fontwise.de</span></a>
-              <a class="live-company live-company--whitecastle" href="https://thewhitecastle.at/" target="_blank" rel="noopener" tabindex="-1"><span class="live-company-logo"><img src="../images/brand-whitecastle.png" alt=""></span><span class="live-company-name">thewhitecastle.at</span></a>
-              <a class="live-company live-company--timberon" href="https://timberon.at/" target="_blank" rel="noopener" tabindex="-1"><span class="live-company-logo"><img src="../images/brand-timberon.png" alt=""></span><span class="live-company-name">timberon.at</span></a>
-              <a class="live-company live-company--timberon" href="https://timberon.de/" target="_blank" rel="noopener" tabindex="-1"><span class="live-company-logo"><img src="../images/brand-timberon.png" alt=""></span><span class="live-company-name">timberon.de</span></a>
-              <a class="live-company live-company--kebappreis" href="https://kebappreis.at/" target="_blank" rel="noopener" tabindex="-1"><span class="live-company-logo"><img src="../images/brand-kebappreis.png" alt=""></span><span class="live-company-name">kebappreis.at</span></a>
-              <a class="live-company live-company--dergutefreund" href="https://dergutefreund.at/" target="_blank" rel="noopener" tabindex="-1"><span class="live-company-logo"><img src="../images/brand-dergutefreund-transparent.png" alt=""></span><span class="live-company-name">dergutefreund.at</span></a>
-            </div>
+
           </div>
         </div>
       </section>
+<section id="web" class="section reveal">
+          <h2>Selected work.</h2>
 
-	      <!-- ====================== QUALITY ====================== -->
-	      <section class="section reveal">
-	        <h2>What you get</h2>
-	        <p class="muted section-intro">Instead of fixed packages, the focus is on the outcome: clear structure, clean implementation and a solution that fits your goal.</p>
+          <p class="muted section-intro">
+            Websites for businesses, lead-generation landing pages, custom web applications, IT automation and technical support. The projects below show the kind of frontend and web work I build.
+          </p>
 
-	        <div class="grid grid-3 reveal reveal-stagger">
-	          <article class="card">
-	            <div class="card-icon">
-	              <img src="../icons/symbols/crosshair.svg" alt="" aria-hidden="true">
-	            </div>
-	            <h3>Clear focus</h3>
-	            <p class="muted">We define the target audience, offer and desired inquiries first, so design and technology support a concrete result.</p>
-	          </article>
+        <div class="grid grid-3 project-carousel reveal reveal-stagger">
 
-	          <article class="card">
-	            <div class="card-icon">
-	              <img src="../icons/symbols/gauge.svg" alt="" aria-hidden="true">
-	            </div>
-	            <h3>Clean implementation</h3>
-	            <p class="muted">Responsive layouts, fast loading, technical SEO basics and a structure that remains maintainable over time.</p>
-	          </article>
+          <!-- Web Project 1 -->
+          <article class="card project">
+            <div class="thumb"><img src="../images/carpriceai.png" alt="" loading="lazy" width="1440" height="900"></div>
 
-	          <article class="card">
-	            <div class="card-icon">
-	              <img src="../icons/symbols/message-square-check.svg" alt="" aria-hidden="true">
-	            </div>
-	            <h3>Direct collaboration</h3>
-	            <p class="muted">Short feedback loops, honest recommendations and transparent next steps from the first conversation to launch.</p>
-	          </article>
-	        </div>
-	      </section>
+            <div>
+              <span class="tag">AI</span>
+              <span class="tag">Web App</span>
+            </div>
+
+            <h3>CarPrice AI</h3>
+            <p>Price-check platform for car dealers that compares vehicle prices with market data from Austria and Germany and returns a clear recommendation instantly.</p>
+
+            <details class="project-details"><summary>Project details</summary><ul class="muted" style="margin:0 0 4px 18px">
+              <li>Fast analysis from a simple vehicle input</li>
+              <li>Market median and pricing recommendation as an actionable result</li>
+              <li>Landing page, login flow and dashboard direction for dealers</li>
+            </ul></details>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn" href="https://www.carpriceai.de/" target="_blank" rel="noopener">View live</a>
+              <a class="btn" href="https://github.com/mrgreata/carpriceAI.com" target="_blank" rel="noopener">View code</a>
+            </div>
+          </article>
+
+          <!-- Web Project 1 -->
+          <article class="card project">
+            <div class="thumb"><img src="../images/gedichte.png" alt="" loading="lazy" width="1440" height="900"></div>
+
+            <div>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">Performance</span>
+            </div>
+
+            <h3>Content website with articles</h3>
+            <p>Static website with clear navigation, articles and an interactive quiz. Useful for content-heavy projects that need fast orientation.</p>
+
+            <details class="project-details"><summary>Project details</summary><ul class="muted" style="margin:0 0 4px 18px">
+              <li>Structured content areas and navigation</li>
+              <li>Lean frontend without unnecessary dependencies</li>
+              <li>Interactive quiz logic as an additional feature</li>
+            </ul></details>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn" href="https://dergutefreund.at/" target="_blank" rel="noopener">View live</a>
+              <a class="btn" href="https://github.com/mrgreata/dergutefreund" target="_blank" rel="noopener">View code</a>
+            </div>
+          </article>
+
+          <!-- Web Project 2 -->
+          <article class="card project">
+            <div class="thumb"><img src="../images/medics.png" alt="" loading="lazy" width="1440" height="900"></div>
+
+            <div>
+              <span class="tag">Vanilla JS</span>
+              <span class="tag">SEO</span>
+            </div>
+
+            <h3>Clinic website</h3>
+            <p>Responsive multi-page site with calm information architecture, readable content and simple contact paths.</p>
+
+            <details class="project-details"><summary>Project details</summary><ul class="muted" style="margin:0 0 4px 18px">
+              <li>Professional web presence for local services</li>
+              <li>Mobile-first structure for fast orientation</li>
+              <li>SEO basics and clear service pages</li>
+            </ul></details>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn" href="https://mrgreata.github.io/medical-clinic-website/" target="_blank" rel="noopener">View live</a>
+              <a class="btn" href="https://github.com/mrgreata/Web-Medics" target="_blank" rel="noopener">View code</a>
+            </div>
+          </article>
+
+          <!-- Web Project 3 -->
+          <article class="card project">
+            <div class="thumb"><img src="../images/artmart.png" alt="" loading="lazy" width="1440" height="900"></div>
+
+            <div>
+              <span class="tag">API</span>
+              <span class="tag">Web App</span>
+            </div>
+
+            <h3>Artmart web application</h3>
+            <p>Client-side web application with product overview, configuration and cart. Example for dynamic interfaces and API-based frontend logic.</p>
+
+            <details class="project-details"><summary>Project details</summary><ul class="muted" style="margin:0 0 4px 18px">
+              <li>Dynamic product presentation and configuration</li>
+              <li>Modular single-page structure</li>
+              <li>Cart and UI logic in the frontend</li>
+            </ul></details>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn" href="https://mrgreata.github.io/artmart-frontend/" target="_blank" rel="noopener">View live</a>
+              <a class="btn" href="https://github.com/mrgreata/artmart-frontend" target="_blank" rel="noopener">View code</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+        <!-- ====================== WEB & UX ====================== -->
+
+
+      <!-- ====================== LIVE COMPANIES ====================== -->
+
+
+        <!-- ====================== QUALITY ====================== -->
+        <section class="section reveal">
+          <h2>What you get</h2>
+          <p class="muted section-intro">Instead of fixed packages, the focus is on the outcome: clear structure, clean implementation and a solution that fits your goal.</p>
+
+          <div class="grid grid-3 reveal reveal-stagger">
+            <article class="card">
+              <div class="card-icon">
+                <img src="../icons/symbols/crosshair.svg" alt="" aria-hidden="true">
+              </div>
+              <h3>Clear focus</h3>
+              <p class="muted">We define the target audience, offer and desired inquiries first, so design and technology support a concrete result.</p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">
+                <img src="../icons/symbols/gauge.svg" alt="" aria-hidden="true">
+              </div>
+              <h3>Clean implementation</h3>
+              <p class="muted">Responsive layouts, fast loading, technical SEO basics and a structure that remains maintainable over time.</p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">
+                <img src="../icons/symbols/message-square-check.svg" alt="" aria-hidden="true">
+              </div>
+              <h3>Direct collaboration</h3>
+              <p class="muted">Short feedback loops, honest recommendations and transparent next steps from the first conversation to launch.</p>
+            </article>
+          </div>
+        </section>
 
 
       <!-- ====================== ABOUT ====================== -->
-	      <section class="section">
-	        <h2>About</h2>
-	        <div class="card">
-	          <p>
-	            I’m <strong>Marlon Greta</strong>, a business informatics student focused on web, software engineering, data analysis and practical process automation.
-	            I connect design, development and analytics so websites and IT solutions are not only polished, but useful in daily business.
-	          </p>
+        <section class="section">
+          <h2>About</h2>
+          <div class="card">
+            <p>
+              I’m <strong>Marlon Greta</strong>, a business informatics student focused on web, software engineering, data analysis and practical process automation.
+              I connect design, development and analytics so websites and IT solutions are not only polished, but useful in daily business.
+            </p>
 
-	          <p class="muted">
-	            My focus is clear, maintainable work: websites, landing pages, web interfaces, automation and technical optimization. Tools support the outcome; they are not the main argument.
-	          </p>
+            <p class="muted">
+              My focus is clear, maintainable work: websites, landing pages, web interfaces, automation and technical optimization. Tools support the outcome; they are not the main argument.
+            </p>
 
           <div class="tech-stack">
             <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" aria-label="HTML5">
@@ -367,57 +303,57 @@
       </section>
 
       <!-- ====================== CONTACT ====================== -->
-	      <section id="contact" class="section reveal">
-	        <div class="card contact-card">
-	          <div class="contact-copy">
-	            <span class="tag">Free first assessment</span>
-	            <h2>Ready for a website that brings in inquiries?</h2>
-	            <p class="muted">Briefly describe what you are planning. I usually reply within 24 hours with a first assessment and the most useful next steps.</p>
-	            <div class="contact-options">
-	              <a class="btn" href="mailto:marlongreta1@gmail.com">marlongreta1@gmail.com</a>
-	              <a class="btn" href="tel:+436767022807">+43 676 7022807</a>
-	              <a class="btn" href="https://linkedin.com/in/marlon-greta" target="_blank" rel="noopener">LinkedIn</a>
-	            </div>
-	          </div>
+        <section id="contact" class="section reveal">
+          <div class="card contact-card">
+            <div class="contact-copy">
+              <span class="tag">Free first assessment</span>
+              <h2>What are you working on?</h2>
+              <p class="muted">Briefly describe what you are planning. I usually reply within 24 hours with a first assessment and the most useful next steps.</p>
+              <div class="contact-options">
+                <a class="btn" href="mailto:marlongreta1@gmail.com">marlongreta1@gmail.com</a>
+                <a class="btn" href="tel:+436767022807">+43 676 7022807</a>
+                <a class="btn" href="https://linkedin.com/in/marlon-greta" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
 
-	          <form class="contact-form" data-contact-form data-contact-endpoint="https://collect.marlongreta1.workers.dev/contact">
-	            <input class="form-hp" type="text" name="Website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
-	            <label>
-	              Name
-	              <input type="text" name="Name" autocomplete="name" required placeholder="Your name">
-	            </label>
+            <form class="contact-form" data-contact-form data-contact-endpoint="https://collect.marlongreta1.workers.dev/contact">
+              <input class="form-hp" type="text" name="Website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+              <label>
+                Name
+                <input type="text" name="Name" autocomplete="name" required placeholder="Your name">
+              </label>
 
-	            <label>
-	              Email
-	              <input type="email" name="Email" autocomplete="email" required placeholder="your.name@example.com">
-	            </label>
+              <label>
+                Email
+                <input type="email" name="Email" autocomplete="email" required placeholder="your.name@example.com">
+              </label>
 
-	            <label>
-	              Project type
-	              <select name="Project type" required>
-	                <option value="">Please select</option>
-	                <option>Business website</option>
-	                <option>Lead-generation landing page</option>
-	                <option>Web development / web application</option>
-	                <option>IT automation or process optimization</option>
-	                <option>Relaunch, maintenance or performance</option>
-	              </select>
-	            </label>
+              <label>
+                Project type
+                <select name="Project type" required>
+                  <option value="">Please select</option>
+                  <option>Business website</option>
+                  <option>Lead-generation landing page</option>
+                  <option>Web development / web application</option>
+                  <option>IT automation or process optimization</option>
+                  <option>Relaunch, maintenance or performance</option>
+                </select>
+              </label>
 
-	            <label>
-	              Message
-	              <textarea name="Message" rows="5" required placeholder="What should the website or solution help you achieve?"></textarea>
-	            </label>
+              <label>
+                Message
+                <textarea name="Message" rows="5" required placeholder="What should the website or solution help you achieve?"></textarea>
+              </label>
 
-	            <button class="btn primary" type="submit">Send inquiry</button>
-	            <p class="form-status muted" data-contact-status role="status" aria-live="polite"></p>
-	          </form>
-	        </div>
-	      </section>
+              <button class="btn primary" type="submit">Send inquiry</button>
+              <p class="form-status muted" data-contact-status role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
 
       <!-- ====================== FOOTER ====================== -->
       <footer class="container footer">
-	        © <span id="y"></span> Marlon Greta – Websites, web development & IT projects. All rights reserved.
+          © <span id="y"></span> Marlon Greta – Websites, web development & IT projects. All rights reserved.
       </footer>
 
     </main>
@@ -429,31 +365,14 @@
 
     <script src="../contact.js" defer></script>
     <script src="../track.js" defer></script>
-    <script src="../cursor.js" defer></script>
-    <script src="../liquid.js" defer></script>
-    <script src="../reveal.js?v=2" defer></script>
-    <script src="../fade.js" defer></script>
+
+
+
+
   </div>
 
   <!-- SVG Filter for Liquid Glass Effect -->
-  <svg width="0" height="0" style="position:absolute">
-    <filter id="liquid-filter">
-      <feTurbulence
-        type="fractalNoise"
-        baseFrequency="0.012"
-        numOctaves="2"
-        seed="2"
-        result="noise"
-      />
-      <feDisplacementMap
-        in="SourceGraphic"
-        in2="noise"
-        scale="0"
-        xChannelSelector="R"
-        yChannelSelector="G"
-      />
-    </filter>
-  </svg>
+
 
   <!-- Auto language routing (do not override manual choice) -->
   <script>
@@ -462,11 +381,13 @@
       const isGerman = (lang || '').toLowerCase().startsWith('de');
 
       // Only redirect if user has NOT manually chosen a language
-      if (isGerman && !localStorage.getItem('lang')) {
+      if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1' && isGerman && !localStorage.getItem('lang')) {
         // From /en/ back to German root
         window.location.replace('../');
       }
     })();
   </script>
+<script src="../ui.js" defer></script>
+<script src="../phosphor.js?v=2" defer></script>
 </body>
 </html>
