@@ -1140,3 +1140,19 @@ summary { overflow-wrap:anywhere; }
   .hero:has([data-phosphor]) .hero-art { position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
   .hero:has([data-phosphor]) .phosphor { position:absolute; width:125%; height:100%; top:-8%; left:-12.5%; aspect-ratio:auto; opacity:.22; }
 }
+
+/* Gentle load entrance, inspired by Originkit's Stagger Text Rise. */
+.hero-word { display:inline-block; }
+@keyframes hero-rise {
+  from { opacity:0; transform:translateY(.55em); filter:blur(3px); }
+  to { opacity:1; transform:translateY(0); filter:blur(0); }
+}
+@media(prefers-reduced-motion:no-preference) {
+  .hero-word { animation:hero-rise .85s cubic-bezier(.22,1,.36,1) both; animation-delay:calc(80ms + var(--word-order)*75ms); }
+  .hero:has(.hero-word) .hero-content>p { animation:hero-rise .8s cubic-bezier(.22,1,.36,1) .4s both; }
+  .hero:has(.hero-word) .hero-actions { animation:hero-rise .8s cubic-bezier(.22,1,.36,1) .55s both; }
+}
+
+.studio-values { grid-template-columns:repeat(3,minmax(0,1fr)); }
+@media(max-width:780px) { .studio-values { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .studio-values { grid-template-columns:1fr; } }
