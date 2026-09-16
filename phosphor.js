@@ -58,7 +58,11 @@ void main() {
     vec3 glow = tanh3(acc * uBase * uGain);
 
     float cover = max(max(glow.r, glow.g), glow.b);
-    gl_FragColor = vec4(glow / max(cover, 0.0001), cover);
+    // Fade to actual zero alpha before the canvas edges, including on Safari.
+    vec2 uv = (gl_FragCoord.xy / uRes) * 2.0 - 1.0;
+    float edge = 1.0 - smoothstep(0.55, 0.96, length(uv));
+    float alpha = cover * edge;
+    gl_FragColor = vec4(glow * edge, alpha);
 }
 `;
   const root = document.querySelector('[data-phosphor]');
@@ -72,7 +76,7 @@ void main() {
   let clock = 0;
   let last = 0;
   let sizeDirty = true;
-  const gl = canvas.getContext('webgl', {alpha:true, premultipliedAlpha:false, antialias:false, depth:false});
+  const gl = canvas.getContext('webgl', {alpha:true, premultipliedAlpha:true, antialias:false, depth:false});
   if (!gl) return;
   function compile(type, source) {
     const shader = gl.createShader(type);

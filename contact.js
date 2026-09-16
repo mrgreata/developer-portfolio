@@ -44,8 +44,10 @@
   function setStatus(form, type, text) {
     const status = form.querySelector("[data-contact-status]");
     if (!status) return;
-    status.textContent = text;
-    status.classList.remove("success", "error");
+    const message = status.querySelector("[data-status-text]");
+    if (message) message.textContent = text;
+    else status.textContent = text;
+    status.classList.remove("sending", "success", "error");
     if (type) status.classList.add(type);
   }
 
@@ -72,6 +74,8 @@
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
+      if (form.querySelector('button[type="submit"]')?.disabled) return;
+
       if (!form.reportValidity()) {
         setStatus(form, "error", getMessage(form, "invalid"));
         return;
@@ -91,7 +95,7 @@
           button.disabled = true;
           button.textContent = getMessage(form, "sending");
         }
-        setStatus(form, null, getMessage(form, "sending"));
+        setStatus(form, "sending", getMessage(form, "sending"));
 
         const response = await fetch(endpoint, {
           method: "POST",
@@ -100,6 +104,8 @@
         });
 
         if (!response.ok) throw new Error("contact_submit_failed");
+        const result = await response.json();
+        if (result.ok !== true) throw new Error("contact_not_confirmed");
 
         form.reset();
         setStatus(form, "success", getMessage(form, "success"));

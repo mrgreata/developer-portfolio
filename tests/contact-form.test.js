@@ -26,6 +26,7 @@ function createButton(text = "Anfrage senden") {
 
 function createStatus() {
   return {
+    querySelector() { return null; },
     textContent: "",
     classList: createClassList(),
   };
@@ -151,7 +152,7 @@ test("German contact form sends the expected payload and shows success", async (
     forms: [form],
     fetchImpl: async (url, options) => {
       requests.push({ url, options });
-      return { ok: true };
+      return { ok: true, json: async () => ({ ok: true }) };
     },
   });
 
@@ -202,7 +203,7 @@ test("English contact form maps English field names", async () => {
     lang: "en",
     fetchImpl: async (url, options) => {
       requests.push({ url, options });
-      return { ok: true };
+      return { ok: true, json: async () => ({ ok: true }) };
     },
   });
 
@@ -224,7 +225,7 @@ test("invalid form does not call the contact endpoint", async () => {
     forms: [form],
     fetchImpl: async () => {
       fetchCalled = true;
-      return { ok: true };
+      return { ok: true, json: async () => ({ ok: true }) };
     },
   });
 
@@ -263,7 +264,7 @@ test("missing endpoint shows an error and skips fetch", async () => {
     forms: [form],
     fetchImpl: async () => {
       fetchCalled = true;
-      return { ok: true };
+      return { ok: true, json: async () => ({ ok: true }) };
     },
   });
 
@@ -275,4 +276,61 @@ test("missing endpoint shows an error and skips fetch", async () => {
     "Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib mir direkt per E-Mail.",
   );
   assert.equal(form.status.classList.contains("error"), true);
+});
+
+
+test("pending submission shows orb state, blocks duplicate sends and clears only after success", async () => {
+  const form = createForm();
+  let resolveRequest;
+  let requests = 0;
+  loadContactScript({ forms: [form], fetchImpl: () => {
+    requests++;
+    return new Promise(resolve => { resolveRequest = resolve; });
+  } });
+  const pending = form.submit();
+  assert.equal(form.status.classList.contains("sending"), true);
+  assert.equal(form.button.disabled, true);
+  assert.equal(form.resetCalled, false);
+  await form.submit();
+  assert.equal(requests, 1);
+  resolveRequest({ ok: true, json: async () => ({ ok: true }) });
+  await pending;
+  assert.equal(form.status.classList.contains("sending"), false);
+  assert.equal(form.status.classList.contains("success"), true);
+  assert.equal(form.resetCalled, true);
+});
+
+for (const [label, response] of [
+  ["negative JSON confirmation", { ok: true, json: async () => ({ ok: false }) }],
+  ["unexpected HTML response", { ok: true, json: async () => { throw new SyntaxError("not JSON"); } }],
+]) {
+  test(label + " preserves input and allows retry", async () => {
+    const form = createForm({ fields: { Name: "Test", Nachricht: "Keep this message" } });
+    loadContactScript({ forms: [form], fetchImpl: async () => response });
+    await form.submit();
+    assert.equal(form.resetCalled, false);
+    assert.equal(form.fields.Nachricht, "Keep this message");
+    assert.equal(form.status.classList.contains("error"), true);
+    assert.equal(form.status.classList.contains("sending"), false);
+    assert.equal(form.button.disabled, false);
+  });
+}
+test("network failure allows a successful retry and updates nested status text", async () => {
+  const form = createForm();
+  const text = { textContent: "" };
+  form.status.querySelector = () => text;
+  let attempts = 0;
+  loadContactScript({ forms: [form], fetchImpl: async () => {
+    if (++attempts === 1) throw new Error("offline");
+    return { ok: true, json: async () => ({ ok: true }) };
+  } });
+  await form.submit();
+  assert.equal(form.resetCalled, false);
+  assert.equal(form.status.classList.contains("error"), true);
+  await form.submit();
+  assert.equal(form.resetCalled, true);
+  assert.equal(form.status.classList.contains("error"), false);
+  assert.equal(form.status.classList.contains("success"), true);
+  assert.match(text.textContent, /erfolgreich/);
+  assert.equal(form.status.textContent, "");
 });

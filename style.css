@@ -1156,3 +1156,20 @@ summary { overflow-wrap:anywhere; }
 .studio-values { grid-template-columns:repeat(3,minmax(0,1fr)); }
 @media(max-width:780px) { .studio-values { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:600px) { .studio-values { grid-template-columns:1fr; } }
+
+/* Transparency is calculated in the shader, not a Safari compositing mask. */
+.hero-art,.phosphor,.phosphor canvas { background:transparent; border:0; outline:0; box-shadow:none; }
+.phosphor canvas { -webkit-mask-image:none; mask-image:none; }
+
+/* Dotted orb treatment inspired by https://libraries.dev/orbs. */
+.form-status { display:flex; align-items:center; gap:1rem; border-radius:12px; transition:background .2s; }
+.form-status.sending,.form-status.success,.form-status.error { padding:1rem; min-height:88px; }
+.form-status.sending { background:#ffffff08; border:1px solid #ffffff20; }
+.contact-orb { display:none; width:56px; height:56px; flex:0 0 56px; color:#cbd2ff; }
+.form-status.sending .contact-orb { display:block; animation:contact-orbit 3s linear infinite; }
+.contact-confirmation { display:none; }
+.form-status.success { color:#baf5c9; background:#24844826; border:1px solid #72dd974d; }
+.form-status.success .contact-confirmation { display:grid; place-items:center; flex:0 0 40px; height:40px; border-radius:50%; background:#9ce8b7; color:#163e25; font-size:1.5rem; font-weight:600; }
+.form-status.error { background:#e1533a14; border:1px solid #ffb9ae40; }
+@keyframes contact-orbit { to { transform:rotate(360deg); } }
+@media(prefers-reduced-motion:reduce) { .form-status.sending .contact-orb { animation:none; } }
