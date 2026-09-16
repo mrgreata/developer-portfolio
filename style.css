@@ -1173,3 +1173,104 @@ summary { overflow-wrap:anywhere; }
 .form-status.error { background:#e1533a14; border:1px solid #ffb9ae40; }
 @keyframes contact-orbit { to { transform:rotate(360deg); } }
 @media(prefers-reduced-motion:reduce) { .form-status.sending .contact-orb { animation:none; } }
+
+/* CSS adaptation of the travelling border glow at libraries.dev/beam. */
+@property --nav-beam-angle { syntax:'<angle>'; initial-value:0deg; inherits:false; }
+.nav-beam { position:relative; isolation:isolate; }
+.nav-beam::before,.nav-beam::after {
+  content:''; position:absolute; inset:-2px; border-radius:inherit; padding:2px; pointer-events:none;
+  background:conic-gradient(from var(--nav-beam-angle),transparent 0deg 225deg,#7588ff 265deg,#b6a0ff 290deg,#ffb8d8 315deg,#fff0ce 340deg,transparent 360deg);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite:exclude;
+  animation:nav-beam-orbit 5s linear infinite;
+}
+.nav-beam::after { inset:-4px; padding:4px; opacity:.3; filter:blur(3px); z-index:-1; }
+@keyframes nav-beam-orbit { to { --nav-beam-angle:360deg; } }
+@media(prefers-reduced-motion:reduce) { .nav-beam::before,.nav-beam::after { animation:none; --nav-beam-angle:45deg; } }
+
+/* Editorial client wall: equal presence for every brand. */
+.live-companies { padding:4.5rem 0 1rem; margin-bottom:5rem; border:0; }
+.clients-heading { text-align:center; margin:0 auto 3rem; }
+.clients-eyebrow { font-size:.7rem; letter-spacing:.16em; color:var(--muted); margin-bottom:1rem; }
+.live-companies h2 { font-size:clamp(2.4rem,4.6vw,4rem); line-height:1.08; margin:0 0 1rem; }
+.clients-intro { color:var(--muted); font-size:1rem; }
+.live-company-group { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; border:1px solid #e2e5df; background:#e2e5df; border-radius:18px; overflow:hidden; }
+.live-company { position:relative; min-height:152px; border:0; background:#fcfdfb; padding:2rem 1.5rem; gap:1rem; justify-content:center; color:var(--text); }
+.live-company:hover,.live-company:focus-visible { background:#eff2ea; color:var(--text); }
+.live-company::after { content:'↗'; position:absolute; right:16px; top:14px; color:var(--muted); opacity:0; transform:translate(-3px,3px); transition:opacity .2s,transform .2s; }
+.live-company:hover::after,.live-company:focus-visible::after { opacity:1; transform:none; }
+.live-company:focus-visible { outline:2px solid var(--brand); outline-offset:-3px; }
+.live-company-logo { width:44px; height:44px; flex:0 0 44px; }
+.live-company-logo img,.live-company--carprice .live-company-logo img { width:44px; max-width:44px; height:38px; max-height:38px; }
+.live-company-name { text-align:left; }
+.live-company-name strong { font-size:clamp(1rem,1.5vw,1.3rem); font-weight:600; letter-spacing:-.035em; line-height:1.2; }
+.live-company-name small { font-size:.72rem; margin-top:.5rem; color:var(--muted); letter-spacing:.01em; }
+.live-company-monogram { border:0; border-radius:10px; background:#edf0e9; font-size:1.35rem; }
+@media(max-width:700px) {
+  .live-companies { padding-top:3rem; margin-bottom:3.5rem; }
+  .clients-heading { margin-bottom:2rem; }
+  .live-company-group { grid-template-columns:repeat(2,minmax(0,1fr)); border-radius:12px; }
+  .live-company { min-height:122px; padding:1.2rem .65rem; gap:.55rem; }
+  .live-company-logo { width:28px; height:32px; flex-basis:28px; }
+  .live-company-logo img,.live-company--carprice .live-company-logo img { width:28px; max-width:28px; height:28px; max-height:28px; }
+  .live-company-name strong { font-size:.88rem; }
+  .live-company-name small { font-size:.64rem; }
+  .live-company:last-child { grid-column:1 / -1; }
+  .live-company::after { right:9px; top:8px; font-size:.75rem; }
+}
+@media(prefers-reduced-motion:reduce) { .live-company::after { transition:none; } }
+
+/* Scannable service groups with concrete deliverables. */
+#leistungen>.services-overview { grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.25rem; }
+.services-overview .service-card { display:flex; flex-direction:column; gap:1rem; padding:1.75rem; border:1px solid var(--line); border-radius:14px; background:#fcfdfb; }
+.services-overview .service-card::before { content:none; }
+.services-overview .card-icon { display:grid; place-items:center; width:46px; height:46px; border-radius:12px; background:#e7eaff; margin:0 0 .25rem; }
+.services-overview .card-icon img { width:24px; height:24px; }
+.services-overview .service-card h3 { font-size:1.3rem; letter-spacing:-.03em; }
+.services-overview .service-card p { line-height:1.6; }
+.service-scope { list-style:none; padding:0; margin:0 0 1rem; font-size:.85rem; line-height:1.55; }
+.service-scope li { padding:.65rem 0 .65rem 1rem; position:relative; border-top:1px solid var(--line); }
+.service-scope li::before { content:''; position:absolute; left:0; top:1.15rem; width:4px; height:4px; border-radius:50%; background:var(--brand); }
+.services-overview .service-card .text-link { align-self:flex-start; margin-top:auto; font-size:.85rem; }
+.service-tools { margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--line); display:flex; align-items:center; flex-wrap:wrap; gap:1rem 2rem; }
+.service-tools>span { font-size:.75rem; color:var(--muted); }
+.service-tools ul { display:flex; flex-wrap:wrap; gap:.75rem 1.5rem; list-style:none; padding:0; margin:0; font-size:.85rem; font-weight:500; }
+@media(max-width:1000px) { #leistungen>.services-overview { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { #leistungen>.services-overview { grid-template-columns:1fr; } .services-overview .service-card { padding:1.4rem; } }
+
+.service-tools { display:block; }
+.service-tools>span { display:block; margin-bottom:1.25rem; letter-spacing:.08em; text-transform:uppercase; }
+.service-tools ul { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:.75rem; }
+.service-tools li { display:flex; align-items:center; gap:.75rem; padding:1rem; border:1px solid var(--line); border-radius:8px; font-size:.8rem; }
+.service-tools li img { width:28px; height:28px; flex:0 0 28px; object-fit:contain; opacity:.8; }
+@media(max-width:420px) { .service-tools ul { grid-template-columns:repeat(2,minmax(0,1fr)); } .service-tools li { padding:.75rem; gap:.5rem; } }
+
+/* Two identical rows make the tool strip loop without a visible jump. */
+.tools-marquee { overflow:hidden; padding-block:4px; -webkit-mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent); mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent); }
+.tools-marquee:focus-visible { outline:2px solid var(--brand); outline-offset:4px; }
+.tools-marquee-track { display:flex; width:max-content; animation:tools-drift 48s linear infinite; }
+.service-tools .tools-marquee ul { display:flex; flex-wrap:nowrap; flex-shrink:0; gap:.75rem; padding-right:.75rem; margin:0; }
+.service-tools .tools-marquee li { flex:0 0 auto; white-space:nowrap; padding:1rem 1.3rem; }
+.tools-marquee:hover .tools-marquee-track,.tools-marquee:focus-within .tools-marquee-track { animation-play-state:paused; }
+@keyframes tools-drift { to { transform:translateX(-50%); } }
+@media(prefers-reduced-motion:reduce) {
+  .tools-marquee { overflow:visible; -webkit-mask-image:none; mask-image:none; }
+  .tools-marquee-track { width:auto; animation:none; }
+  .service-tools .tools-marquee ul { flex-wrap:wrap; flex-shrink:1; padding:0; }
+  .service-tools .tools-marquee ul[aria-hidden="true"] { display:none; }
+}
+
+/* Soft portrait silhouette and room for the studio story. */
+.about-content { align-items:center; }
+.about-photo { border-radius:46% 46% 24px 24px; overflow:hidden; align-self:center; }
+.about-photo img { display:block; width:100%; height:auto; aspect-ratio:4 / 5; object-fit:cover; object-position:center; border-radius:inherit; }
+.tools-marquee-track { animation-duration:78s; }
+@media(max-width:600px) {
+  .about-photo { width:min(100%,280px); margin-inline:auto; }
+}
+
+.about-photo { border-radius:20px; }
+.about-photo img { height:290px; aspect-ratio:auto; border-radius:20px; }
+@media(max-width:900px) { .about-photo img { height:240px; } }
