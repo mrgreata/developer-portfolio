@@ -84,6 +84,7 @@
       const endpoint = form.getAttribute("data-contact-endpoint");
       const button = form.querySelector('button[type="submit"]');
       const originalButtonText = button?.textContent;
+      const originalButtonHTML = button?.innerHTML;
 
       if (!endpoint) {
         setStatus(form, "error", getMessage(form, "error"));
@@ -118,7 +119,8 @@
       } finally {
         if (button) {
           button.disabled = false;
-          button.textContent = originalButtonText;
+          if (originalButtonHTML !== undefined) button.innerHTML = originalButtonHTML;
+          else button.textContent = originalButtonText;
         }
       }
     });
