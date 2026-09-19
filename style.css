@@ -1217,7 +1217,7 @@ summary { overflow-wrap:anywhere; }
   .live-company-logo img,.live-company--carprice .live-company-logo img { width:28px; max-width:28px; height:28px; max-height:28px; }
   .live-company-name strong { font-size:.88rem; }
   .live-company-name small { font-size:.64rem; }
-  .live-company:last-child { grid-column:1 / -1; }
+  .live-company:last-child:nth-child(odd) { grid-column:1 / -1; }
   .live-company::after { right:9px; top:8px; font-size:.75rem; }
 }
 @media(prefers-reduced-motion:reduce) { .live-company::after { transition:none; } }
@@ -1450,3 +1450,72 @@ summary { overflow-wrap:anywhere; }
 .value-card details[data-expanded="false"] summary svg { transform:rotate(0); }
 .value-card details[data-expanded="false"] summary { color:var(--text); }
 @media(prefers-reduced-motion:reduce) { .studio-values .value-card,.value-card summary svg { transition:none; } }
+
+.hero-content>.hero-description { margin:1.6rem 0 0; max-width:560px; font-size:1.0625rem; line-height:1.6; color:var(--muted); }
+.services-extra { margin:1.5rem 0 0; max-width:760px; color:var(--muted); font-size:.9375rem; }
+.partner-lead { max-width:720px; color:var(--muted); font-size:1.0625rem; line-height:1.6; }
+.partner-intro .btn { margin-top:1rem; }
+.partner-models { gap:1.5rem; }
+.partner-models .card { padding:1.6rem; background:#f2f4fc; border:1px solid #2448e812; border-radius:18px; }
+.partner-stack { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem 3rem; }
+.partner-contact { border-top:1px solid var(--line); }
+.partner-contact>p { max-width:650px; color:var(--muted); }
+.contact-form label[hidden] { display:none; }
+@media(max-width:780px) { .partner-models,.partner-stack { grid-template-columns:1fr; } }
+
+.project .project-scope { font-size:.8125rem; color:var(--brand); line-height:1.5; }
+
+/* Preserve supplied wordmarks, with whitespace cropped only in presentation. */
+.live-company-logo--wordmark { flex-basis:64px; width:64px; }
+.live-company-logo--wordmark svg { display:block; width:64px; height:40px; filter:grayscale(1) contrast(3); mix-blend-mode:multiply; }
+@media(max-width:600px) { .live-company-logo--wordmark { flex-basis:42px; width:42px; } .live-company-logo--wordmark svg { width:42px; height:30px; } }
+
+.live-company--combined::after { content:none; }
+.client-domains { display:flex; align-items:center; gap:.55rem; margin-top:.35rem; color:var(--muted); font-size:.8rem; }
+.client-domains a { display:inline-flex; align-items:center; min-height:32px; padding:0 .2rem; text-decoration:underline; text-underline-offset:3px; }
+.client-domains a:hover { color:var(--brand); }
+.client-domains a:focus-visible { outline:2px solid var(--brand); outline-offset:2px; border-radius:2px; }
+@media(max-width:700px) { .client-domains { gap:.25rem; font-size:.72rem; margin-top:0; } .client-domains a { min-height:44px; min-width:32px; justify-content:center; } }
+
+/* Reveal the original Atomy cyan on interaction. */
+.live-company--atomy { transition:background .35s ease; }
+.live-company--atomy .live-company-logo svg { transition:filter .4s ease,transform .4s cubic-bezier(.22,1,.36,1); }
+.live-company--atomy:focus-visible { background:#edf8fb; }
+.live-company--atomy:focus-visible .live-company-logo svg { filter:grayscale(0) contrast(1); }
+@media(hover:hover) and (pointer:fine) {
+ .live-company--atomy:hover { background:#edf8fb; }
+ .live-company--atomy:hover .live-company-logo svg { filter:grayscale(0) contrast(1); transform:translateY(-2px) scale(1.07); }
+}
+@media(prefers-reduced-motion:reduce) {
+ .live-company--atomy,.live-company--atomy .live-company-logo svg { transition:none; }
+ .live-company--atomy:hover .live-company-logo svg { transform:none; }
+}
+
+.live-company--invitation { background:#f2f4fc; }
+.live-company--invitation .live-company-name strong { max-width:20ch; font-size:1.05rem; font-weight:500; line-height:1.3; }
+.live-company--invitation .live-company-name small { display:flex; align-items:center; gap:.55rem; color:var(--brand); }
+.live-company--invitation::after { content:none; }
+.live-company--invitation:hover { background:#eaf0fc; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) { .live-company--invitation small svg { transition:transform .25s ease; } .live-company--invitation:hover small svg { transform:translate(2px,-2px); } }
+
+/* Consistent original-colour reveal across the client wall. */
+.live-company { transition:background .35s ease; }
+.live-company .live-company-logo img,
+.live-company .live-company-logo svg { transition:filter .4s ease,transform .4s cubic-bezier(.22,1,.36,1); }
+.live-company:focus-visible .live-company-logo img,
+.live-company:focus-visible .live-company-logo svg,
+.live-company:focus-within .live-company-logo img,
+.live-company:focus-within .live-company-logo svg { filter:none; }
+.live-company:focus-within { background:#edf8fb; }
+@media(hover:hover) and (pointer:fine) {
+ .live-company:hover { background:#edf8fb; }
+ .live-company:hover .live-company-logo img,
+ .live-company:hover .live-company-logo svg { filter:none; transform:translateY(-2px) scale(1.07); }
+}
+@media(prefers-reduced-motion:reduce) {
+ .live-company,.live-company .live-company-logo img,.live-company .live-company-logo svg { transition:none; }
+ .live-company:hover .live-company-logo img,.live-company:hover .live-company-logo svg { transform:none; }
+}
+
+.contact-form .form-hint { color:#bfc8bd; font-size:.75rem; font-weight:400; line-height:1.5; }
+.contact-form select option,.contact-form select optgroup { background:#202820; color:#fff; }
