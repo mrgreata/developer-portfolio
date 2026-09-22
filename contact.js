@@ -32,8 +32,8 @@
         ? "Thanks, your inquiry was sent successfully."
         : "Danke, deine Anfrage wurde erfolgreich gesendet.",
       error: isEnglish
-        ? "Something went wrong. Please try again or email me directly."
-        : "Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib mir direkt per E-Mail.",
+        ? "Something went wrong. Please try again or contact the studio directly by email."
+        : "Etwas ist schiefgelaufen. Bitte versuche es erneut oder kontaktiere das Studio direkt per E-Mail.",
       invalid: isEnglish
         ? "Please check the highlighted fields."
         : "Bitte prüfe die markierten Felder.",
@@ -53,13 +53,19 @@
 
   function payloadFromForm(form) {
     const data = new FormData(form);
+    const kind = String(data.get("Anliegen") || "").trim();
+    const partner = kind === "Entwicklungspartnerschaft";
+    const detail = String(data.get(partner ? "Unterstützung" : "Projektart") || data.get("Project type") || "").trim();
+    const projectType = kind ? [kind, (partner || kind === "Eigenes Projekt") ? detail : ""].filter(Boolean).join(": ") : detail;
+    const collaboration = partner ? String(data.get("Zusammenarbeit") || "").trim() : "";
+    const message = String(data.get("Nachricht") || data.get("Message") || "").trim();
     return {
       name: String(data.get("Name") || "").trim(),
       email: String(data.get("E-Mail") || data.get("Email") || "").trim(),
-      projectType: String(data.get("Projektart") || data.get("Project type") || "").trim(),
-      budget: String(data.get("Budgetrahmen") || "").trim(),
+      projectType: projectType,
+      budget: partner ? "" : String(data.get("Budgetrahmen") || "").trim(),
       timeline: String(data.get("Zeitraum") || "").trim(),
-      message: String(data.get("Nachricht") || data.get("Message") || "").trim(),
+      message: collaboration ? `${message}\n\nArt der Zusammenarbeit: ${collaboration}` : message,
       website: String(data.get("Website") || "").trim(),
       page: window.location.href,
       lang: document.documentElement.lang || "de",

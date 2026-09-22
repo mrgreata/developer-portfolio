@@ -250,7 +250,7 @@ test("failed endpoint response shows the fallback error", async () => {
   assert.equal(form.resetCalled, false);
   assert.equal(
     form.status.textContent,
-    "Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib mir direkt per E-Mail.",
+    "Etwas ist schiefgelaufen. Bitte versuche es erneut oder kontaktiere das Studio direkt per E-Mail.",
   );
   assert.equal(form.status.classList.contains("error"), true);
   assert.equal(form.button.disabled, false);
@@ -273,7 +273,7 @@ test("missing endpoint shows an error and skips fetch", async () => {
   assert.equal(fetchCalled, false);
   assert.equal(
     form.status.textContent,
-    "Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib mir direkt per E-Mail.",
+    "Etwas ist schiefgelaufen. Bitte versuche es erneut oder kontaktiere das Studio direkt per E-Mail.",
   );
   assert.equal(form.status.classList.contains("error"), true);
 });
@@ -333,4 +333,24 @@ test("network failure allows a successful retry and updates nested status text",
   assert.equal(form.status.classList.contains("success"), true);
   assert.match(text.textContent, /erfolgreich/);
   assert.equal(form.status.textContent, "");
+});
+
+test('partner inquiry includes support and collaboration without a stale direct-project budget', async () => {
+  const form = createForm({fields:{Name:'Test', 'E-Mail':'test@example.com', Anliegen:'Entwicklungspartnerschaft', Unterstützung:'Backend', Zusammenarbeit:'Laufende Zusammenarbeit', Projektart:'Website', Budgetrahmen:'5.000 €', Nachricht:'Unterstützung für ein bestehendes Backend gesucht.'}});
+  let payload;
+  loadContactScript({forms:[form],fetchImpl:async (url,options)=>{payload=JSON.parse(options.body);return {ok:true,json:async()=>({ok:true})};}});
+  await form.submit();
+  assert.equal(payload.projectType,'Entwicklungspartnerschaft: Backend');
+  assert.equal(payload.budget,'');
+  assert.match(payload.message,/Art der Zusammenarbeit: Laufende Zusammenarbeit/);
+  assert.equal(form.resetCalled,true);
+});
+test('direct inquiry preserves a free-form budget and omits stale partnership details', async () => {
+  const form=createForm({fields:{Name:'Test','E-Mail':'test@example.com',Anliegen:'Eigenes Projekt',Projektart:'Webanwendung / Portal',Zusammenarbeit:'Laufend',Budgetrahmen:'5.000 bis 12.000 €',Nachricht:'Ein internes Portal entwickeln.'}});
+  let payload;
+  loadContactScript({forms:[form],fetchImpl:async(url,options)=>{payload=JSON.parse(options.body);return {ok:true,json:async()=>({ok:true})};}});
+  await form.submit();
+  assert.equal(payload.projectType,'Eigenes Projekt: Webanwendung / Portal');
+  assert.equal(payload.budget,'5.000 bis 12.000 €');
+  assert.equal(payload.message,'Ein internes Portal entwickeln.');
 });

@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://marlongreta.at/</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://marlongreta.at/en/</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+<url><loc>https://marlongreta.at/</loc><lastmod>2026-09-22</lastmod></url>
+<url><loc>https://marlongreta.at/partner/</loc><lastmod>2026-09-22</lastmod></url>
+<url><loc>https://marlongreta.at/ueber-uns/</loc><lastmod>2026-09-22</lastmod></url>
+<url><loc>https://marlongreta.at/oeffentlicher-bereich/</loc><lastmod>2026-09-22</lastmod></url>
+<url><loc>https://marlongreta.at/en/</loc><lastmod>2026-09-22</lastmod></url>
+<url><loc>https://marlongreta.at/en/about/</loc><lastmod>2026-09-22</lastmod></url>
+<url><loc>https://marlongreta.at/leistungen/webentwicklung/</loc><lastmod>2026-09-22</lastmod></url>
+<url><loc>https://marlongreta.at/leistungen/webapps/</loc><lastmod>2026-09-22</lastmod></url>
+<url><loc>https://marlongreta.at/leistungen/tracking/</loc><lastmod>2026-09-22</lastmod></url>
+<url><loc>https://marlongreta.at/projekte/fontwise/</loc><lastmod>2026-09-22</lastmod></url>
+<url><loc>https://marlongreta.at/projekte/kebappreis/</loc><lastmod>2026-09-22</lastmod></url>
 </urlset>

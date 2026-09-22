@@ -90,23 +90,3 @@
     reducedMotion.addEventListener('change', settle);
   });
 })();
-
-// Route partner inquiries through the existing, validated contact payload.
-(() => {
-  const type = document.querySelector('select[name="Projektart"]');
-  const budget = document.querySelector('[data-project-budget]');
-  if (!type || !budget) return;
-  const sync = () => {
-    const partner = type.value.startsWith('Partnerschaft:');
-    budget.disabled = partner;
-    budget.closest('label').hidden = partner;
-  };
-  if (new URLSearchParams(location.search).get('anfrage') === 'partner') {
-    type.value = 'Partnerschaft: Noch offen';
-  } else if (new URLSearchParams(location.search).get('anfrage') === 'oeffentlich') {
-    type.value = 'Öffentliches Projekt / Ausschreibung';
-  }
-  type.addEventListener('change', sync);
-  type.form.addEventListener('reset', () => setTimeout(sync, 0));
-  sync();
-})();
