@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://marlongreta.at/</loc><lastmod>2026-09-22</lastmod></url>
-<url><loc>https://marlongreta.at/partner/</loc><lastmod>2026-09-22</lastmod></url>
-<url><loc>https://marlongreta.at/ueber-uns/</loc><lastmod>2026-09-22</lastmod></url>
-<url><loc>https://marlongreta.at/oeffentlicher-bereich/</loc><lastmod>2026-09-22</lastmod></url>
-<url><loc>https://marlongreta.at/en/</loc><lastmod>2026-09-22</lastmod></url>
-<url><loc>https://marlongreta.at/en/about/</loc><lastmod>2026-09-22</lastmod></url>
-<url><loc>https://marlongreta.at/leistungen/webentwicklung/</loc><lastmod>2026-09-22</lastmod></url>
-<url><loc>https://marlongreta.at/leistungen/webapps/</loc><lastmod>2026-09-22</lastmod></url>
-<url><loc>https://marlongreta.at/leistungen/tracking/</loc><lastmod>2026-09-22</lastmod></url>
-<url><loc>https://marlongreta.at/projekte/fontwise/</loc><lastmod>2026-09-22</lastmod></url>
-<url><loc>https://marlongreta.at/projekte/kebappreis/</loc><lastmod>2026-09-22</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://marlongreta.at/</loc><lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://marlongreta.at/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlongreta.at/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marlongreta.at/" />
+  </url>
+  <url><loc>https://marlongreta.at/leistungen/webentwicklung/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://marlongreta.at/leistungen/webapps/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://marlongreta.at/leistungen/tracking/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://marlongreta.at/partner/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://marlongreta.at/oeffentlicher-bereich/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://marlongreta.at/projekte/fontwise/</loc><lastmod>2026-11-04</lastmod></url>
+  <url><loc>https://marlongreta.at/projekte/kebappreis/</loc><lastmod>2026-11-04</lastmod></url>
+  <url>
+    <loc>https://marlongreta.at/ueber-uns/</loc><lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://marlongreta.at/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlongreta.at/en/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marlongreta.at/ueber-uns/" />
+  </url>
+  <url>
+    <loc>https://marlongreta.at/en/</loc><lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://marlongreta.at/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlongreta.at/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marlongreta.at/" />
+  </url>
+  <url>
+    <loc>https://marlongreta.at/en/about/</loc><lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://marlongreta.at/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://marlongreta.at/en/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marlongreta.at/ueber-uns/" />
+  </url>
 </urlset>

@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /cloudflare/
+Disallow: /docs/
+Disallow: /tests/
 
 Sitemap: https://marlongreta.at/sitemap.xml
