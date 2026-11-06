@@ -25,6 +25,86 @@
 })();
 
 
+// Carry a branded wipe across full page navigations.
+(() => {
+  const storageKey = 'greaterlabs-page-transition';
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let navigating = false;
+
+  const createOverlay = (covered = false) => {
+    const overlay = document.createElement('div');
+    overlay.className = `page-transition${covered ? ' is-covered is-destination' : ''}`;
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.innerHTML = `
+      <span class="page-transition__step" style="--step-top:0%;--enter-delay:0ms;--exit-delay:90ms"></span>
+      <span class="page-transition__step" style="--step-top:25%;--enter-delay:30ms;--exit-delay:60ms"></span>
+      <span class="page-transition__step" style="--step-top:50%;--enter-delay:60ms;--exit-delay:30ms"></span>
+      <span class="page-transition__step" style="--step-top:75%;--enter-delay:90ms;--exit-delay:0ms"></span>
+      <span class="page-transition__wordmark">greater labs<span>.</span></span>
+    `;
+    document.body.append(overlay);
+    return overlay;
+  };
+
+  try {
+    if (sessionStorage.getItem(storageKey) === 'reveal') {
+      sessionStorage.removeItem(storageKey);
+      if (!reducedMotion.matches) {
+        document.documentElement.classList.add('page-transition-pending');
+        const overlay = createOverlay(true);
+        document.documentElement.classList.remove('page-transition-pending');
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          setTimeout(() => {
+            let revealFinished = false;
+            const finishReveal = () => {
+              if (revealFinished) return;
+              revealFinished = true;
+              overlay.remove();
+            };
+            overlay.querySelectorAll('.page-transition__step')[0]
+              .addEventListener('transitionend', finishReveal, { once: true });
+            overlay.classList.add('is-revealing');
+            setTimeout(finishReveal, 600);
+          }, 50);
+        }));
+      }
+    }
+  } catch (_) {
+    // Navigation still works when storage is unavailable.
+  }
+
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href]');
+    if (!link || navigating || event.defaultPrevented || event.button !== 0) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (link.target && link.target !== '_self' || link.hasAttribute('download')) return;
+
+    let destination;
+    try { destination = new URL(link.href, location.href); } catch (_) { return; }
+    if (destination.origin !== location.origin || !/^https?:$/.test(destination.protocol)) return;
+    const sameDocument = destination.pathname === location.pathname && destination.search === location.search;
+    if (sameDocument || reducedMotion.matches) return;
+
+    event.preventDefault();
+    navigating = true;
+    const overlay = createOverlay();
+    overlay.getBoundingClientRect();
+    overlay.classList.add('is-covered');
+
+    let navigationStarted = false;
+    const continueNavigation = () => {
+      if (navigationStarted) return;
+      navigationStarted = true;
+      try { sessionStorage.setItem(storageKey, 'reveal'); } catch (_) {}
+      location.assign(destination.href);
+    };
+    overlay.querySelectorAll('.page-transition__step')[3]
+      .addEventListener('transitionend', continueNavigation, { once: true });
+    setTimeout(continueNavigation, 700);
+  });
+})();
+
+
 // Keep pointer effects optional: the disclosure works without JavaScript.
 (() => {
   const grid = document.querySelector('.studio-values');
