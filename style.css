@@ -1583,11 +1583,11 @@ summary { overflow-wrap:anywhere; }
  .live-company:hover { background:#edf8fb; }
  .live-company:hover .live-company-logo img,
  .live-company:hover .live-company-logo svg { filter:none; transform:translateY(-2px) scale(1.07); }
- .live-company--stempl:hover .live-company-logo--stempl { color:#d9ff43; transform:translateY(-2px) scale(1.07); }
+ .live-company--stempl:hover .live-company-logo--stempl { color:#103c3b; transform:translateY(-2px) scale(1.07); }
  .live-company--whitecastle:hover .live-company-logo img { filter:brightness(0) saturate(100%) invert(84%) sepia(18%) saturate(506%) hue-rotate(350deg) brightness(91%) contrast(86%); }
 }
 .live-company--stempl:focus-visible .live-company-logo--stempl,
-.live-company--stempl:focus-within .live-company-logo--stempl { color:#d9ff43; }
+.live-company--stempl:focus-within .live-company-logo--stempl { color:#103c3b; }
 .live-company--whitecastle:focus-visible .live-company-logo img,
 .live-company--whitecastle:focus-within .live-company-logo img { filter:brightness(0) saturate(100%) invert(84%) sepia(18%) saturate(506%) hue-rotate(350deg) brightness(91%) contrast(86%); }
 @media(prefers-reduced-motion:reduce) {
