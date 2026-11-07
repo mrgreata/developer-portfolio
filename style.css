@@ -1195,6 +1195,7 @@ summary { overflow-wrap:anywhere; }
 /* Project colors stay consistent across languages and sorting. */
 .project--carpriceai { --project-color:#dce6fb; }
 .project--stempl { --project-color:#d9ff43; }
+.project--stempl .thumb img { object-fit:cover; object-position:center; background:#103c3b; }
 .project--fontwise { --project-color:#eaf2bc; }
 .project--gedichte { --project-color:#f0dfca; }
 .project--medics { --project-color:#cfece7; }
