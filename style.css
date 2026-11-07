@@ -1121,9 +1121,9 @@ summary:hover,.nav a:not(.primary):hover {
 .live-company { min-width:0; min-height:92px; display:flex; flex-direction:column; justify-content:center; gap:12px; opacity:.85; transition:opacity .2s; }
 .live-company:hover { opacity:1; }
 .live-company-logo { display:flex; align-items:center; justify-content:center; width:100%; height:40px; }
-.live-company-logo img { width:46px; height:40px; object-fit:contain; filter:grayscale(1) brightness(.25); }
+.live-company-logo img { width:46px; height:40px; object-fit:contain; filter:none; }
 .live-company-name { font-size:.75rem; white-space:nowrap; }
-.live-company--whitecastle .live-company-logo img { filter:grayscale(1) brightness(.2); }
+.live-company--whitecastle .live-company-logo img { filter:none; }
 .live-company--carprice .live-company-logo img { width:64px; }
 @media(max-width:1050px) {
   .hero-layout { grid-template-columns:minmax(0,1fr) 320px; gap:2rem; }
@@ -1276,6 +1276,18 @@ summary { overflow-wrap:anywhere; }
 .live-company-logo { width:44px; height:44px; flex:0 0 44px; }
 .live-company-logo img,.live-company--carprice .live-company-logo img { width:44px; max-width:44px; height:38px; max-height:38px; }
 .live-company-logo--stempl { display:grid; place-items:center; border-radius:12px; background:#d9ff43; color:#103c3b; font-size:1.15rem; font-weight:700; letter-spacing:-.08em; }
+.live-company--carprice .live-company-logo,
+.live-company--fontwise .live-company-logo,
+.live-company--whitecastle .live-company-logo,
+.live-company--dergutefreund .live-company-logo { border-radius:12px; }
+.live-company--carprice .live-company-logo { background:#dce6fb; }
+.live-company--fontwise .live-company-logo { background:#eaf2bc; }
+.live-company--whitecastle .live-company-logo { background:#f3e7c6; }
+.live-company--dergutefreund .live-company-logo { background:#f0dfca; }
+.live-company--carprice .live-company-logo img,
+.live-company--fontwise .live-company-logo img,
+.live-company--whitecastle .live-company-logo img,
+.live-company--dergutefreund .live-company-logo img { width:30px; height:30px; }
 .live-company-name { text-align:left; }
 .live-company-name strong { font-size:clamp(1rem,1.5vw,1.3rem); font-weight:600; letter-spacing:-.035em; line-height:1.2; }
 .live-company-name small { font-size:.72rem; margin-top:.5rem; color:var(--muted); letter-spacing:.01em; }
@@ -1291,6 +1303,10 @@ summary { overflow-wrap:anywhere; }
   .live-company-name small { font-size:.64rem; }
   .live-company:last-child:nth-child(odd) { grid-column:1 / -1; }
   .live-company::after { right:9px; top:8px; font-size:.75rem; }
+  .live-company--carprice .live-company-logo img,
+  .live-company--fontwise .live-company-logo img,
+  .live-company--whitecastle .live-company-logo img,
+  .live-company--dergutefreund .live-company-logo img { width:20px; height:20px; }
 }
 @media(prefers-reduced-motion:reduce) { .live-company::after { transition:none; } }
 
@@ -1539,7 +1555,7 @@ summary { overflow-wrap:anywhere; }
 
 /* Preserve supplied wordmarks, with whitespace cropped only in presentation. */
 .live-company-logo--wordmark { flex-basis:64px; width:64px; }
-.live-company-logo--wordmark svg { display:block; width:64px; height:40px; filter:grayscale(1) contrast(3); mix-blend-mode:multiply; }
+.live-company-logo--wordmark svg { display:block; width:64px; height:40px; filter:none; mix-blend-mode:normal; }
 @media(max-width:600px) { .live-company-logo--wordmark { flex-basis:42px; width:42px; } .live-company-logo--wordmark svg { width:42px; height:30px; } }
 
 .live-company--combined::after { content:none; }
@@ -1549,7 +1565,7 @@ summary { overflow-wrap:anywhere; }
 .client-domains a:focus-visible { outline:2px solid var(--brand); outline-offset:2px; border-radius:2px; }
 @media(max-width:700px) { .client-domains { gap:.25rem; font-size:.72rem; margin-top:0; } .client-domains a { min-height:44px; min-width:32px; justify-content:center; } }
 
-/* Reveal the original Atomy cyan on interaction. */
+/* Keep the original Atomy cyan visible and add subtle interaction feedback. */
 .live-company--atomy { transition:background .35s ease; }
 .live-company--atomy .live-company-logo svg { transition:filter .4s ease,transform .4s cubic-bezier(.22,1,.36,1); }
 .live-company--atomy:focus-visible { background:#edf8fb; }
