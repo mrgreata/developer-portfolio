@@ -1275,7 +1275,7 @@ summary { overflow-wrap:anywhere; }
 .live-company:focus-visible { outline:2px solid var(--brand); outline-offset:-3px; }
 .live-company-logo { width:44px; height:44px; flex:0 0 44px; }
 .live-company-logo img,.live-company--carprice .live-company-logo img { width:44px; max-width:44px; height:38px; max-height:38px; }
-.live-company-logo--stempl { display:grid; place-items:center; color:#d9ff43; font-size:1.15rem; font-weight:700; letter-spacing:-.08em; transition:transform .4s cubic-bezier(.22,1,.36,1); }
+.live-company-logo--stempl { display:grid; place-items:center; color:var(--text); font-size:1.15rem; font-weight:700; letter-spacing:-.08em; transition:color .4s ease,transform .4s cubic-bezier(.22,1,.36,1); }
 .live-company-name { text-align:left; }
 .live-company-name strong { font-size:clamp(1rem,1.5vw,1.3rem); font-weight:600; letter-spacing:-.035em; line-height:1.2; }
 .live-company-name small { font-size:.72rem; margin-top:.5rem; color:var(--muted); letter-spacing:.01em; }
@@ -1583,9 +1583,11 @@ summary { overflow-wrap:anywhere; }
  .live-company:hover { background:#edf8fb; }
  .live-company:hover .live-company-logo img,
  .live-company:hover .live-company-logo svg { filter:none; transform:translateY(-2px) scale(1.07); }
- .live-company--stempl:hover .live-company-logo--stempl { transform:translateY(-2px) scale(1.07); }
+ .live-company--stempl:hover .live-company-logo--stempl { color:#d9ff43; transform:translateY(-2px) scale(1.07); }
  .live-company--whitecastle:hover .live-company-logo img { filter:brightness(0) saturate(100%) invert(84%) sepia(18%) saturate(506%) hue-rotate(350deg) brightness(91%) contrast(86%); }
 }
+.live-company--stempl:focus-visible .live-company-logo--stempl,
+.live-company--stempl:focus-within .live-company-logo--stempl { color:#d9ff43; }
 .live-company--whitecastle:focus-visible .live-company-logo img,
 .live-company--whitecastle:focus-within .live-company-logo img { filter:brightness(0) saturate(100%) invert(84%) sepia(18%) saturate(506%) hue-rotate(350deg) brightness(91%) contrast(86%); }
 @media(prefers-reduced-motion:reduce) {
