@@ -1194,6 +1194,7 @@ summary { overflow-wrap:anywhere; }
 
 /* Project colors stay consistent across languages and sorting. */
 .project--carpriceai { --project-color:#dce6fb; }
+.project--stempl { --project-color:#d9ff43; }
 .project--fontwise { --project-color:#eaf2bc; }
 .project--gedichte { --project-color:#f0dfca; }
 .project--medics { --project-color:#cfece7; }
@@ -1273,6 +1274,7 @@ summary { overflow-wrap:anywhere; }
 .live-company:focus-visible { outline:2px solid var(--brand); outline-offset:-3px; }
 .live-company-logo { width:44px; height:44px; flex:0 0 44px; }
 .live-company-logo img,.live-company--carprice .live-company-logo img { width:44px; max-width:44px; height:38px; max-height:38px; }
+.live-company-logo--stempl { display:grid; place-items:center; border-radius:12px; background:#d9ff43; color:#103c3b; font-size:1.15rem; font-weight:700; letter-spacing:-.08em; }
 .live-company-name { text-align:left; }
 .live-company-name strong { font-size:clamp(1rem,1.5vw,1.3rem); font-weight:600; letter-spacing:-.035em; line-height:1.2; }
 .live-company-name small { font-size:.72rem; margin-top:.5rem; color:var(--muted); letter-spacing:.01em; }

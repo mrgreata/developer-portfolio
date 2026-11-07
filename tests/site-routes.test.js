@@ -126,9 +126,9 @@ test('legacy and error pages cannot be indexed',()=>{
   assert.ok(!robots.includes('Disallow: /gemeinden/'),'legacy page must remain crawlable so noindex and canonical can be read');
 });
 
-test('all 25 WebP assets are validly referenced and none is orphaned',()=>{
+test('all 27 WebP assets are validly referenced and none is orphaned',()=>{
   const webpFiles=fs.readdirSync(path.join(root,'images')).filter(file=>file.endsWith('.webp')).sort();
-  assert.equal(webpFiles.length,25);
+  assert.equal(webpFiles.length,27);
   const html=pages.map(page=>fs.readFileSync(path.join(root,page),'utf8')).join('\n');
   const references=new Set([...html.matchAll(/images\/([^'" ,]+\.webp)/g)].map(match=>match[1]));
   for(const file of webpFiles)assert.ok(references.has(file),'orphaned WebP: '+file);
